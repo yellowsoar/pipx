@@ -1,0 +1,1136 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="execute binaries from Python packages in isolated environments">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Docs - pipx</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-90243909-2", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#pipx-install" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="pipx" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              pipx
+            </span>
+            <span class="md-header-nav__topic">
+              Docs
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/pipx-project/pipx/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    pipx-project/pipx
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="pipx" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    pipx
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/pipx-project/pipx/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    pipx-project/pipx
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Docs
+      </label>
+    
+    <a href="./" title="Docs" class="md-nav__link md-nav__link--active">
+      Docs
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-install" title="pipx install" class="md-nav__link">
+    pipx install
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipx-install-examples" title="pipx install examples" class="md-nav__link">
+    pipx install examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-run" title="pipx run" class="md-nav__link">
+    pipx run
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipx-run-examples" title="pipx run examples" class="md-nav__link">
+    pipx run examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-upgrade" title="pipx upgrade" class="md-nav__link">
+    pipx upgrade
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-upgrade-all" title="pipx upgrade-all" class="md-nav__link">
+    pipx upgrade-all
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-inject" title="pipx inject" class="md-nav__link">
+    pipx inject
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipx-inject-example" title="pipx inject example" class="md-nav__link">
+    pipx inject example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-uninstall" title="pipx uninstall" class="md-nav__link">
+    pipx uninstall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-uninstall-all" title="pipx uninstall-all" class="md-nav__link">
+    pipx uninstall-all
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-reinstall-all" title="pipx reinstall-all" class="md-nav__link">
+    pipx reinstall-all
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-list" title="pipx list" class="md-nav__link">
+    pipx list
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipx-list-example" title="pipx list example" class="md-nav__link">
+    pipx list example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-runpip" title="pipx runpip" class="md-nav__link">
+    pipx runpip
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../how-pipx-works/" title="How pipx works" class="md-nav__link">
+      How pipx works
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../programs-to-try/" title="Programs to Try" class="md-nav__link">
+      Programs to Try
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../changelog/" title="Changelog" class="md-nav__link">
+      Changelog
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-install" title="pipx install" class="md-nav__link">
+    pipx install
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipx-install-examples" title="pipx install examples" class="md-nav__link">
+    pipx install examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-run" title="pipx run" class="md-nav__link">
+    pipx run
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipx-run-examples" title="pipx run examples" class="md-nav__link">
+    pipx run examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-upgrade" title="pipx upgrade" class="md-nav__link">
+    pipx upgrade
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-upgrade-all" title="pipx upgrade-all" class="md-nav__link">
+    pipx upgrade-all
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-inject" title="pipx inject" class="md-nav__link">
+    pipx inject
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipx-inject-example" title="pipx inject example" class="md-nav__link">
+    pipx inject example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-uninstall" title="pipx uninstall" class="md-nav__link">
+    pipx uninstall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-uninstall-all" title="pipx uninstall-all" class="md-nav__link">
+    pipx uninstall-all
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-reinstall-all" title="pipx reinstall-all" class="md-nav__link">
+    pipx reinstall-all
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-list" title="pipx list" class="md-nav__link">
+    pipx list
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipx-list-example" title="pipx list example" class="md-nav__link">
+    pipx list example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-runpip" title="pipx runpip" class="md-nav__link">
+    pipx runpip
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/pipx-project/pipx/edit/master/docs/docs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Docs</h1>
+                
+                <!---
+Do not edit this file. This file rendered from templates/readme.md.
+See Contributing for how to update this file.
+--->
+
+<pre><code>pipx --help
+usage: pipx [-h] [--version]
+            {install,inject,upgrade,upgrade-all,uninstall,uninstall-all,reinstall-all,list,run,runpip,ensurepath}
+            ...
+
+Install and execute binaries from Python packages.
+
+Binaries can either be installed globally into isolated Virtual Environments
+or run directly in an temporary Virtual Environment.
+
+Virtual Environment location is ~/.local/pipx/venvs.
+Symlinks to binaries are placed in ~/.local/bin.
+These locations can be overridden with the environment variables
+PIPX_HOME and PIPX_BIN_DIR, respectively. (Virtual Environments will
+be installed to $PIPX_HOME/venvs)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             Print version and exit
+
+subcommands:
+  Get help for commands with pipx COMMAND --help
+
+  {install,inject,upgrade,upgrade-all,uninstall,uninstall-all,reinstall-all,list,run,runpip,ensurepath}
+    install             Install a package
+    inject              Install packages into an existing Virtual Environment
+    upgrade             Upgrade a package
+    upgrade-all         Upgrade all packages. Runs `pip install -U &lt;pkgname&gt;`
+                        for each package.
+    uninstall           Uninstall a package
+    uninstall-all       Uninstall all packages
+    reinstall-all       Reinstall all packages with a different Python
+                        executable
+    list                List installed packages
+    run                 Either download the latest version of a package to
+                        temporary directory, then run a binary from it, or
+                        invoke binary from local `__pypackages__` directory
+                        (expiremental, see https://github.com/cs01/pythonloc)
+    runpip              Run pip in an existing pipx-managed Virtual
+                        Environment
+    ensurepath          Deprecated, will be removed in a future release. Use
+                        `userpath` instead.
+
+</code></pre>
+
+<h3 id="pipx-install">pipx install</h3>
+<pre><code>pipx install --help
+usage: pipx install [-h] [--spec SPEC] [--include-deps] [--verbose] [--force]
+                    [--python PYTHON] [--system-site-packages]
+                    [--index-url INDEX_URL] [--editable] [--pip-args PIP_ARGS]
+                    package
+
+The install command is the preferred way to globally install binaries
+from python packages on your system. It creates an isolated virtual
+environment for the package, then ensures the package's binaries are
+accessible on your $PATH.
+
+The result: binaries you can run from anywhere, located in packages
+you can cleanly upgrade or uninstall. Guaranteed to not have
+dependency version conflicts or interfere with your OS's python
+packages. 'sudo' is not required to do this.
+
+pipx install PACKAGE
+pipx install --python PYTHON PACKAGE
+pipx install --spec VCS_URL PACKAGE
+pipx install --spec ZIP_FILE PACKAGE
+pipx install --spec TAR_GZ_FILE PACKAGE
+
+The argument to `--spec` is passed directly to `pip install`.
+
+The default virtual environment location is ~/.local/pipx
+and can be overridden by setting the environment variable `PIPX_HOME`
+ (Virtual Environments will be installed to `$PIPX_HOME/venvs`).
+
+The default binary location is ~/.local/bin and can be
+overridden by setting the environment variable `PIPX_BIN_DIR`.
+
+positional arguments:
+  package               package name
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --spec SPEC           The package name or specific installation source
+                        passed to pip. Runs `pip install -U SPEC`. For example
+                        `--spec mypackage==2.0.0` or `--spec
+                        git+https://github.com/user/repo.git@branch`
+  --include-deps        Include binaries of dependent packages
+  --verbose
+  --force               Install even when the package has already been
+                        installed
+  --python PYTHON       The Python executable used to create the Virtual
+                        Environment and run the associated binary/binaries.
+                        Must be v3.3+.
+  --system-site-packages
+                        Give the virtual environment access to the system
+                        site-packages dir.
+  --index-url INDEX_URL, -i INDEX_URL
+                        Base URL of Python Package Index
+  --editable, -e        Install a project in editable mode
+  --pip-args PIP_ARGS   Arbitrary pip arguments to pass directly to pip
+                        install/upgrade commands
+
+</code></pre>
+
+<h4 id="pipx-install-examples"><code>pipx install</code> examples</h4>
+<pre><code>pipx install pycowsay
+pipx install --python python3.6 pycowsay
+pipx install --python python3.7 pycowsay
+pipx install --spec git+https://github.com/ambv/black black
+pipx --spec git+https://github.com/ambv/black.git@branch-name black
+pipx --spec git+https://github.com/ambv/black.git@git-hash black
+pipx install --spec https://github.com/ambv/black/archive/18.9b0.zip black
+pipx install --spec black[d] black
+pipx install --include-deps jupyter
+</code></pre>
+
+<h3 id="pipx-run">pipx run</h3>
+<pre><code>pipx run --help
+usage: pipx run [-h] [--no-cache] [--pypackages] [--spec SPEC] [--verbose]
+                [--python PYTHON] [--system-site-packages]
+                [--index-url INDEX_URL] [--editable] [--pip-args PIP_ARGS]
+                binary [binary_args [binary_args ...]]
+
+Either download the latest version of a package to temporary directory
+then run a binary from it, or invoke a binary from local `__pypackages__`
+directory.
+
+If running from a temporary environment, the environment will be cached
+and re-used for up to 2 days. This
+means subsequent calls to 'run' for the same package will be faster
+since they can re-use the cached Virtual Environment.
+
+In support of PEP 582 'run' will use binaries found in a local __pypackages__
+ directory, if present. Please note that this behavior is experimental,
+ and is a acts as a companion tool to pythonloc. It may be modified or
+ removed in the future.
+
+positional arguments:
+  binary                binary/package name
+  binary_args           arguments passed to the binary when it is invoked
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --no-cache            Do not re-use cached virtual environment if it exists
+  --pypackages          Require binary to be run from local __pypackages__
+                        directory
+  --spec SPEC           The package name or specific installation source
+                        passed to pip. Runs `pip install -U SPEC`. For example
+                        `--spec mypackage==2.0.0` or `--spec
+                        git+https://github.com/user/repo.git@branch`
+  --verbose
+  --python PYTHON       The Python version to run package's CLI binary with.
+                        Must be v3.3+.
+  --system-site-packages
+                        Give the virtual environment access to the system
+                        site-packages dir.
+  --index-url INDEX_URL, -i INDEX_URL
+                        Base URL of Python Package Index
+  --editable, -e        Install a project in editable mode
+  --pip-args PIP_ARGS   Arbitrary pip arguments to pass directly to pip
+                        install/upgrade commands
+
+</code></pre>
+
+<h4 id="pipx-run-examples"><code>pipx run</code> examples</h4>
+<p>pipx enables you to test various combinations of Python versions and package versions in ephemeral environments:</p>
+<pre><code>pipx run BINARY  # latest version of binary is run with python3
+pipx --spec PACKAGE==2.0.0 run BINARY  # specific version of package is run
+pipx --python 3.4 run BINARY  # Installed and invoked with specific Python version
+pipx --python 3.7 --spec PACKAGE=1.7.3 run BINARY
+pipx --spec git+https://url.git run BINARY  # latest version on master is run
+pipx --spec git+https://url.git@branch run BINARY
+pipx --spec git+https://url.git@hash run BINARY
+pipx run pycowsay moo
+pipx --version  # prints pipx version
+pipx run pycowsay  --version  # prints pycowsay version
+pipx --python pythonX pycowsay
+pipx --spec pycowsay==2.0 pycowsay --version
+pipx --spec git+https://github.com/ambv/black.git black
+pipx --spec git+https://github.com/ambv/black.git@branch-name black
+pipx --spec git+https://github.com/ambv/black.git@git-hash black
+pipx --spec https://github.com/ambv/black/archive/18.9b0.zip black --help
+pipx https://gist.githubusercontent.com/cs01/fa721a17a326e551ede048c5088f9e0f/raw/6bdfbb6e9c1132b1c38fdd2f195d4a24c540c324/pipx-demo.py
+</code></pre>
+
+<h3 id="pipx-upgrade">pipx upgrade</h3>
+<pre><code>pipx upgrade --help
+usage: pipx upgrade [-h] [--spec SPEC] [--include-deps]
+                    [--system-site-packages] [--index-url INDEX_URL]
+                    [--editable] [--pip-args PIP_ARGS] [--verbose]
+                    package
+
+Upgrade a package in a pipx-managed Virtual Environment by running 'pip
+install --upgrade PACKAGE'
+
+positional arguments:
+  package
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --spec SPEC           The package name or specific installation source
+                        passed to pip. Runs `pip install -U SPEC`. For example
+                        `--spec mypackage==2.0.0` or `--spec
+                        git+https://github.com/user/repo.git@branch`
+  --include-deps        Include binaries of dependent packages
+  --system-site-packages
+                        Give the virtual environment access to the system
+                        site-packages dir.
+  --index-url INDEX_URL, -i INDEX_URL
+                        Base URL of Python Package Index
+  --editable, -e        Install a project in editable mode
+  --pip-args PIP_ARGS   Arbitrary pip arguments to pass directly to pip
+                        install/upgrade commands
+  --verbose
+
+</code></pre>
+
+<h3 id="pipx-upgrade-all">pipx upgrade-all</h3>
+<pre><code>pipx upgrade-all --help
+usage: pipx upgrade-all [-h] [--include-deps] [--system-site-packages]
+                        [--index-url INDEX_URL] [--editable]
+                        [--pip-args PIP_ARGS] [--skip SKIP [SKIP ...]]
+                        [--verbose]
+
+Upgrades all packages within their virtual environments by running 'pip
+install --upgrade PACKAGE'
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --include-deps        Include binaries of dependent packages
+  --system-site-packages
+                        Give the virtual environment access to the system
+                        site-packages dir.
+  --index-url INDEX_URL, -i INDEX_URL
+                        Base URL of Python Package Index
+  --editable, -e        Install a project in editable mode
+  --pip-args PIP_ARGS   Arbitrary pip arguments to pass directly to pip
+                        install/upgrade commands
+  --skip SKIP [SKIP ...]
+                        skip these packages
+  --verbose
+
+</code></pre>
+
+<h3 id="pipx-inject">pipx inject</h3>
+<pre><code>pipx inject --help
+usage: pipx inject [-h] [--include-binaries] [--include-deps]
+                   [--system-site-packages] [--index-url INDEX_URL]
+                   [--editable] [--pip-args PIP_ARGS] [--verbose]
+                   package dependencies [dependencies ...]
+
+Installs packages to an existing pipx-managed virtual environment.
+
+positional arguments:
+  package               Name of the existing pipx-managed Virtual Environment
+                        to inject into
+  dependencies          the packages to inject into the Virtual Environment
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --include-binaries    Add binaries from the injected packages onto your PATH
+  --include-deps        Include binaries of dependent packages
+  --system-site-packages
+                        Give the virtual environment access to the system
+                        site-packages dir.
+  --index-url INDEX_URL, -i INDEX_URL
+                        Base URL of Python Package Index
+  --editable, -e        Install a project in editable mode
+  --pip-args PIP_ARGS   Arbitrary pip arguments to pass directly to pip
+                        install/upgrade commands
+  --verbose
+
+</code></pre>
+
+<h4 id="pipx-inject-example"><code>pipx inject</code> example</h4>
+<p>One use of the inject command is setting up a REPL with some useful extra packages.</p>
+<pre><code>pipx install ptpython
+pipx inject ptpython requests pendulum
+</code></pre>
+
+<p>After running the above commands, you will be able to import and use the <code>requests</code> and <code>pendulum</code> packages inside a <code>ptpython</code> repl.</p>
+<h3 id="pipx-uninstall">pipx uninstall</h3>
+<pre><code>pipx uninstall --help
+usage: pipx uninstall [-h] [--verbose] package
+
+Uninstalls a pipx-managed Virtual Environment by deleting it and any files
+that point to its binaries.
+
+positional arguments:
+  package
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --verbose
+
+</code></pre>
+
+<h3 id="pipx-uninstall-all">pipx uninstall-all</h3>
+<pre><code>pipx uninstall-all --help
+usage: pipx uninstall-all [-h] [--verbose]
+
+Uninstall all pipx-managed packages
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --verbose
+
+</code></pre>
+
+<h3 id="pipx-reinstall-all">pipx reinstall-all</h3>
+<pre><code>pipx reinstall-all --help
+usage: pipx reinstall-all [-h] [--include-deps] [--system-site-packages]
+                          [--index-url INDEX_URL] [--editable]
+                          [--pip-args PIP_ARGS] [--skip SKIP [SKIP ...]]
+                          [--verbose]
+                          python
+
+Reinstalls all packages using a different version of Python.
+
+Packages are uninstalled, then installed with pipx install PACKAGE.
+This is useful if you upgraded to a new version of Python and want
+all your packages to use the latest as well.
+
+If you originally installed a package from a source other than PyPI,
+this command may behave in unexpected ways since it will reinstall from PyPI.
+
+positional arguments:
+  python
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --include-deps        Include binaries of dependent packages
+  --system-site-packages
+                        Give the virtual environment access to the system
+                        site-packages dir.
+  --index-url INDEX_URL, -i INDEX_URL
+                        Base URL of Python Package Index
+  --editable, -e        Install a project in editable mode
+  --pip-args PIP_ARGS   Arbitrary pip arguments to pass directly to pip
+                        install/upgrade commands
+  --skip SKIP [SKIP ...]
+                        skip these packages
+  --verbose
+
+</code></pre>
+
+<h3 id="pipx-list">pipx list</h3>
+<pre><code>pipx list --help
+usage: pipx list [-h] [--verbose]
+
+List packages and binariess installed with pipx
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --verbose
+
+</code></pre>
+
+<h4 id="pipx-list-example"><code>pipx list</code> example</h4>
+<pre><code>&gt; pipx list
+venvs are in /Users/user/.local/pipx/venvs
+binaries are exposed on your $PATH at /Users/user/.local/bin
+   package black 18.9b0, Python 3.7.0
+    - black
+    - blackd
+   package pipx 0.10.0, Python 3.7.0
+    - pipx
+</code></pre>
+
+<h3 id="pipx-runpip">pipx runpip</h3>
+<pre><code>pipx runpip --help
+usage: pipx runpip [-h] [--verbose] package [pipargs [pipargs ...]]
+
+Run pip in an existing pipx-managed Virtual Environment
+
+positional arguments:
+  package     Name of the existing pipx-managed Virtual Environment to run pip
+              in
+  pipargs     Arguments to forward to pip command
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --verbose
+
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Getting Started
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../faq/" title="FAQ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                FAQ
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.267712eb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
