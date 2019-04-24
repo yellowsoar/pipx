@@ -539,11 +539,13 @@ See Contributing for how to update this file.
 <h2 id="overview">Overview</h2>
 <p>Python and PyPI allow developers to distribute code with "console script entry points". These scripts let users call into Python code from the command line, effectively acting like standalone applications.</p>
 <p><code>pipx</code> is a tool to install and run any of the thousands of Python applications available on PyPI in a safe, convenient, and reliable way. Not all Python packages have entry points, but many do.</p>
-<p><code>pipx</code> lets you:
-* Safely install packages to isolated virtual environments, while globally exposing their CLI entry points so you can run them from anywhere (see the <code>install</code> command)
-* Easily list, upgrade, and uninstall packages that were installed with pipx
-* Run the latest version of a CLI application in a temporary environment (see the <code>run</code> command)
-* Run binaries from the <code>__pypackages__</code> directory per PEP 582 as a companion tool to <a href="https://github.com/cs01/pythonloc">pythonloc</a></p>
+<p><code>pipx</code> lets you:</p>
+<ul>
+<li>Safely install packages to isolated virtual environments, while globally exposing their CLI entry points so you can run them from anywhere (see the <code>install</code> command)</li>
+<li>Easily list, upgrade, and uninstall packages that were installed with pipx</li>
+<li>Run the latest version of a CLI application in a temporary environment (see the <code>run</code> command)</li>
+<li>Run binaries from the <code>__pypackages__</code> directory per PEP 582 as a companion tool to <a href="https://github.com/cs01/pythonloc">pythonloc</a></li>
+</ul>
 <p>Best of all, pipx runs with regular user permissions, never calling <code>sudo pip install</code> (you aren't doing that, are you? 😄).</p>
 <p>pipx is similar to JavaScript's <a href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">npx</a> - which ships with npm, but also allows you to install instead of just run. pipx does not ship with pip but installing it is often an important part of bootstrapping your system.</p>
 <h3 id="safely-installing-to-isolated-environments">Safely installing to isolated environments</h3>
