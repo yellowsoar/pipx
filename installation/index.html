@@ -482,13 +482,8 @@
 <p>python 3.6+ is required to install pipx. pipx can run binaries from packages with Python 3.3+. Don't have Python 3.6 or later? See <a href="https://realpython.com/installing-python/">Python 3 Installation &amp; Setup Guide</a>.</p>
 <p>pipx works on macOS, linux, and Windows.</p>
 <h2 id="install-pipx">Install pipx</h2>
-<pre><code>pip install --user pipx
-userpath append ~/.local/bin
-</code></pre>
-
-<p>to be sure you are using python3 you can run</p>
 <pre><code>python3 -m pip install --user pipx
-userpath append ~/.local/bin
+python3 -m userpath append ~/.local/bin
 </code></pre>
 
 <p>If you want pipx to store binaries in a different location, you can set the environment variable <code>PIPX_BIN_DIR</code>, and ensure that location is on your path with <code>userpath append $PIPX_BIN_DIR</code>.</p>

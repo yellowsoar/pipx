@@ -482,32 +482,10 @@
 <li>pipx prints emojies 😀</li>
 </ul>
 <h2 id="migrating-to-pipx-from-pipsi">Migrating to pipx from pipsi</h2>
-<p>Although <code>pipx</code> does not provide an automatic migration command,
-it is pretty easy to do it from the command-line:</p>
-<pre><code class="bash"># install pipx with the recommended method
-pip install --user pipx
-userpath append ~/.local/bin
-# you may have to open a new terminal here for pipx to be on your PATH
-
-# migrate from pipsi to pipx
-pipsi list | grep 'Package ' | cut -d\&quot; -f2 | \
-  while read -r p; do
-    pipsi uninstall --yes &quot;$p&quot;
-    # reinstall everything with python 3.6
-    pipx install --python python3.6 &quot;$p&quot;
-  done
-
-# clean up
-rm -rf ~/.local/pipsi
-rm ~/.local/bin/pipsi
+<p>After you have installed pipx, run this <a href="https://gist.githubusercontent.com/cs01/e72fc2e6a641a5105c4c22d83fe9cacc/raw/258582a6e7d8d4ac4b7313a48693264a5b6ea889/migrate_pipsi_to_pipx.py">gist</a>.</p>
+<pre><code>pipx run https://gist.githubusercontent.com/cs01/e72fc2e6a641a5105c4c22d83fe9cacc/raw/258582a6e7d8d4ac4b7313a48693264a5b6ea889/migrate_pipsi_to_pipx.py
 </code></pre>
 
-<p>If you want to do this manually, you will have to remove pipsi's directory completely then reinstall everything with pipx.</p>
-<p>First remove pipsi's directory (this is its default)</p>
-<pre><code>rm -r ~/.local/pipsi
-</code></pre>
-
-<p>There will still be files in <code>~/.local/bin</code> that point to <code>~/.local/pipsi/venvs</code>. If you reinstall the same packages with <code>pipx</code>, the files will be overwritten with valid files that point to the new pipx directory in <code>~/.local/pipx/venvs</code>. You may also want to remove files in <code>~/.local/bin</code>, but be sure the files you delete there were created by pipsi.</p>
 <h2 id="how-does-this-compare-with-pip-run">How does this compare with <code>pip-run</code>?</h2>
 <p><a href="https://github.com/jaraco/pip-run">pip-run</a> is focused on running <strong>arbitrary Python code in ephemeral environments</strong> while pipx is focused on running <strong>Python binaries in ephemeral and non-ephemeral environments</strong>.</p>
 <p>For example these two commands both install poetry to an ephemeral environment and invoke poetry with <code>--help</code>.</p>
