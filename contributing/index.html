@@ -374,6 +374,26 @@
     Documentation
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serving" title="Serving" class="md-nav__link">
+    Serving
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing" title="Publishing" class="md-nav__link">
+    Publishing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -429,6 +449,26 @@
     Documentation
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serving" title="Serving" class="md-nav__link">
+    Serving
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing" title="Publishing" class="md-nav__link">
+    Publishing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -468,16 +508,21 @@
 </code></pre>
 
 <h2 id="documentation">Documentation</h2>
-<p>Documentation is made with <code>mkdocs</code> which generates documentation from several <code>.md</code> files in <code>docs</code>.</p>
+<p>Documentation is generated with <code>mkdocs</code> which generates documentation from several <code>.md</code> files in <code>docs</code>. Some of those <code>.md</code> files, as well as the main <code>README.md</code> file are generated from a <code>templates</code> directory.</p>
+<h3 id="serving">Serving</h3>
 <p>To serve documenation with mkdocs that reflect the content of the <code>docs</code> folder as you make changes:</p>
 <pre><code>tox -e watchdocs
 </code></pre>
 
-<p>To build the documentation:</p>
+<p>As you serve the docs, if you make changes to any template files, you generate the .md files by running:</p>
 <pre><code>tox -e docs
 </code></pre>
 
-<p>Note that some of the documentation is generated. This occurs during the build command.</p>
+<h3 id="publishing">Publishing</h3>
+<p>To publish documentation to GitHub pages:</p>
+<pre><code>mkdocs gh-pages
+</code></pre>
+
 <p>When finished, you may remove the virtual environment with <code>rm -r .tox</code>.</p>
                 
                   

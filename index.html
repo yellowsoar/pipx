@@ -283,6 +283,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#install-pipx" title="Install pipx" class="md-nav__link">
+    Install pipx
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#overview" title="Overview" class="md-nav__link">
     Overview
   </a>
@@ -451,6 +458,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#install-pipx" title="Install pipx" class="md-nav__link">
+    Install pipx
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#overview" title="Overview" class="md-nav__link">
     Overview
   </a>
@@ -536,6 +550,12 @@ See Contributing for how to update this file.
 
 <p><em>For comparison to pipsi, see the <a href="faq/">FAQ</a>.</em></p>
 <p><em>pipx uses the word "binary" to describe a CLI application that can be run directly from the command line. These files are located in the <code>bin</code> directory of a Python installation, alongside other executables. Despite the name, they do not necessarily contain binary data.</em></p>
+<h2 id="install-pipx">Install pipx</h2>
+<pre><code>python3 -m pip install --user pipx
+python3 -m userpath append ~/.local/bin
+</code></pre>
+
+<p>For more details, see <a href="installation">installation</a>.</p>
 <h2 id="overview">Overview</h2>
 <p>Python and PyPI allow developers to distribute code with "console script entry points". These scripts let users call into Python code from the command line, effectively acting like standalone applications.</p>
 <p><code>pipx</code> is a tool to install and run any of the thousands of Python applications available on PyPI in a safe, convenient, and reliable way. Not all Python packages have entry points, but many do.</p>
