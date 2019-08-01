@@ -344,6 +344,19 @@
     pipx vs pipsi
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migrating-to-pipx-from-pipsi" title="Migrating to pipx from pipsi" class="md-nav__link">
+    Migrating to pipx from pipsi
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -357,19 +370,6 @@
   <a href="#pipx-vs-npx" title="pipx vs npx" class="md-nav__link">
     pipx vs npx
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#migrating-to-pipx-from-pipsi" title="Migrating to pipx from pipsi" class="md-nav__link">
-    Migrating to pipx from pipsi
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -490,6 +490,19 @@
     pipx vs pipsi
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migrating-to-pipx-from-pipsi" title="Migrating to pipx from pipsi" class="md-nav__link">
+    Migrating to pipx from pipsi
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -503,19 +516,6 @@
   <a href="#pipx-vs-npx" title="pipx vs npx" class="md-nav__link">
     pipx vs npx
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#migrating-to-pipx-from-pipsi" title="Migrating to pipx from pipsi" class="md-nav__link">
-    Migrating to pipx from pipsi
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -599,6 +599,11 @@ Install a Python interpreter with pyenv, then install a package using pipx and t
 </ul>
 <p>Example interaction:
 None. Either one or the other should be used. These tools compete for a similar workflow.</p>
+<h3 id="migrating-to-pipx-from-pipsi">Migrating to pipx from pipsi</h3>
+<p>After you have installed pipx, run <a href="https://raw.githubusercontent.com/pipxproject/pipx/master/scripts/migrate_pipsi_to_pipx.py">migrate_pipsi_to_pipx.py</a>. Why not do this with your new pipx installation?</p>
+<pre><code>pipx run https://raw.githubusercontent.com/pipxproject/pipx/master/scripts/migrate_pipsi_to_pipx.py
+</code></pre>
+
 <h2 id="pipx-vs-brew">pipx vs brew</h2>
 <ul>
 <li>Both brew and pipx install cli tools</li>
@@ -615,11 +620,6 @@ brew can be used to install pipx, but they generally don't interact much.</p>
 </ul>
 <p>Example interaction:
 None. These tools work for different languages.</p>
-<h3 id="migrating-to-pipx-from-pipsi">Migrating to pipx from pipsi</h3>
-<p>After you have installed pipx, run <a href="https://raw.githubusercontent.com/pipxproject/pipx/master/scripts/migrate_pipsi_to_pipx.py">migrate_pipsi_to_pipx.py</a>. Why not do this with your new pipx installation?</p>
-<pre><code>pipx run https://raw.githubusercontent.com/pipxproject/pipx/master/scripts/migrate_pipsi_to_pipx.py
-</code></pre>
-
 <h2 id="pipx-vs-pip-run">pipx vs pip-run</h2>
 <p><a href="https://github.com/jaraco/pip-run">pip-run</a> is focused on running <strong>arbitrary Python code in ephemeral environments</strong> while pipx is focused on running <strong>Python binaries in ephemeral and non-ephemeral environments</strong>.</p>
 <p>For example these two commands both install poetry to an ephemeral environment and invoke poetry with <code>--help</code>.</p>
