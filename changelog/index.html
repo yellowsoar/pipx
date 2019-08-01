@@ -363,16 +363,20 @@
                 
                   <h1>Changelog</h1>
                 
-                <p>0.13.2.1
-- Remove virtual environment if installation did not complete (#193)</p>
-<p>0.13.2.0
-- Add shell autocompletions. Also add <code>pipx completions</code> command to print instructions on how to add pipx completions to your shell.
-- Un-deprecate <code>ensurepath</code>. Use <code>userpath</code> internally instead of instructing users to run the <code>userpath</code> cli command.
-- Improve detection of PIPX_BIN_DIR not being on PATH
-- Improve error message when an existing symlink exists in PIPX_BIN_DIR and points to the wrong location
-- Improve handling of unexpected files in PIPX_HOME (@uranusjr)
-- swap out of order logic in order to correctly recommend --include-deps (@joshuarli)
-- [dev] Migrate from tox to nox</p>
+                <p>0.13.2.1</p>
+<ul>
+<li>Remove virtual environment if installation did not complete. For example, if it was interrupted by ctrl+c or if an exception occurred for any reason. (#193)</li>
+</ul>
+<p>0.13.2.0</p>
+<ul>
+<li>Add shell autocompletions. Also add <code>pipx completions</code> command to print instructions on how to add pipx completions to your shell.</li>
+<li>Un-deprecate <code>ensurepath</code>. Use <code>userpath</code> internally instead of instructing users to run the <code>userpath</code> cli command.</li>
+<li>Improve detection of PIPX_BIN_DIR not being on PATH</li>
+<li>Improve error message when an existing symlink exists in PIPX_BIN_DIR and points to the wrong location</li>
+<li>Improve handling of unexpected files in PIPX_HOME (@uranusjr)</li>
+<li>swap out of order logic in order to correctly recommend --include-deps (@joshuarli)</li>
+<li>[dev] Migrate from tox to nox</li>
+</ul>
 <p>0.13.1.1</p>
 <ul>
 <li>Do not raise bare exception if no binaries found (#150)</li>
