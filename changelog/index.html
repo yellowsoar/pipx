@@ -285,8 +285,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../faq/" title="FAQ" class="md-nav__link">
-      FAQ
+    <a href="../comparisons/" title="Comparison to Other Tools" class="md-nav__link">
+      Comparison to Other Tools
     </a>
   </li>
 
@@ -363,7 +363,15 @@
                 
                   <h1>Changelog</h1>
                 
-                <p>0.13.1.1</p>
+                <p>0.13.2.0
+- Add shell autocompletions. Also add <code>pipx completions</code> command to print instructions on how to add pipx completions to your shell.
+- Un-deprecate <code>ensurepath</code>. Use <code>userpath</code> internally instead of instructing users to run the <code>userpath</code> cli command.
+- Improve detection of PIPX_BIN_DIR not being on PATH
+- Improve error message when an existing symlink exists in PIPX_BIN_DIR and points to the wrong location
+- Improve handling of unexpected files in PIPX_HOME (@uranusjr)
+- swap out of order logic in order to correctly recommend --include-deps (@joshuarli)
+- [dev] Migrate from tox to nox</p>
+<p>0.13.1.1</p>
 <ul>
 <li>Do not raise bare exception if no binaries found (#150)</li>
 <li>Update pipsi migration script</li>

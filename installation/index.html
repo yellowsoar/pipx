@@ -350,8 +350,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../faq/" title="FAQ" class="md-nav__link">
-      FAQ
+    <a href="../comparisons/" title="Comparison to Other Tools" class="md-nav__link">
+      Comparison to Other Tools
     </a>
   </li>
 
@@ -479,21 +479,21 @@
                 
                 <h2 id="system-requirements">System Requirements</h2>
 <p>python 3.6+ is required to install pipx. pipx can run binaries from packages with Python 3.3+. Don't have Python 3.6 or later? See <a href="https://realpython.com/installing-python/">Python 3 Installation &amp; Setup Guide</a>.</p>
+<p>You also need to have <code>pip</code> installed on your machine for <code>python3</code>. Installing it varies from system to system. Consult <a href="https://pip.pypa.io/en/stable/installing/">pip's installation instructions</a>. Installing on Linux works best with a <a href="https://packaging.python.org/guides/installing-using-linux-tools/#installing-pip-setuptools-wheel-with-linux-package-managers">Linux Package Manager</a>.</p>
 <p>pipx works on macOS, linux, and Windows.</p>
 <h2 id="install-pipx">Install pipx</h2>
+<p>Assuming you have <code>pip</code> installed for python3, run:</p>
 <pre><code>python3 -m pip install --user pipx
-python3 -m userpath append ~/.local/bin
+python3 -m ensurepath
 </code></pre>
 
 <h3 id="installation-options">Installation Options</h3>
-<p>pipx's default binary location is <code>~/.local/bin</code>. This can be overriden with te <code>PIPX_BIN_DIR</code> environment variable. If you override <code>PIPX_BIN_DIR</code>, make sure it is on your path by running <code>userpath append $PIPX_BIN_DIR</code>.</p>
-<p>pipx's default virtual environment location is <code>~/.local/pipx</code>. This can be overriden with the environment variable <code>PIPX_HOME</code>.</p>
+<p>pipx's default binary location is <code>~/.local/bin</code>. This can be overriden with the environment variable <code>PIPX_BIN_DIR</code>.</p>
+<p>pipx's default virtual environment location is <code>~/.local/pipx</code>. This can be overridden with the environment variable <code>PIPX_HOME</code>.</p>
 <h2 id="install-pipx-development-versions">Install pipx Development Versions</h2>
 <p>New versions of pipx are published as beta or release candidates. These versions look something like <code>0.13.0b1</code>, where <code>b1</code> signifies the first beta release of version 0.13. These releases can be tested with</p>
 <pre><code>pip install --user pipx --upgrade --dev
 </code></pre>
-
-<p>Development occurs on the <code>dev</code> branch of this repository. If there is no such branch, that means there is no work currently in development for a new version.</p>
                 
                   
                 

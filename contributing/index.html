@@ -289,8 +289,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../faq/" title="FAQ" class="md-nav__link">
-      FAQ
+    <a href="../comparisons/" title="Comparison to Other Tools" class="md-nav__link">
+      Comparison to Other Tools
     </a>
   </li>
 
@@ -355,8 +355,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#testing-pipx-locally" title="Testing pipx locally" class="md-nav__link">
+    Testing pipx locally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-pipx-on-continuous-intergration-builds" title="Testing pipx on Continuous Intergration builds" class="md-nav__link">
+    Testing pipx on Continuous Intergration builds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentation" title="Documentation" class="md-nav__link">
     Documentation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publishing-doc-changes-to-github-pages" title="Publishing Doc Changes to GitHub pages" class="md-nav__link">
+    Publishing Doc Changes to GitHub pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-new-pipx-version" title="Release New pipx Version" class="md-nav__link">
+    Release New pipx Version
   </a>
   
 </li>
@@ -410,8 +444,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#testing-pipx-locally" title="Testing pipx locally" class="md-nav__link">
+    Testing pipx locally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-pipx-on-continuous-intergration-builds" title="Testing pipx on Continuous Intergration builds" class="md-nav__link">
+    Testing pipx on Continuous Intergration builds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentation" title="Documentation" class="md-nav__link">
     Documentation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publishing-doc-changes-to-github-pages" title="Publishing Doc Changes to GitHub pages" class="md-nav__link">
+    Publishing Doc Changes to GitHub pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-new-pipx-version" title="Release New pipx Version" class="md-nav__link">
+    Release New pipx Version
   </a>
   
 </li>
@@ -437,18 +505,53 @@
                 
                   <h1>Contributing</h1>
                 
-                <p>pipx uses <a href="https://pypi.org/project/tox/">tox</a> for development, continuous integration testing, and automation.</p>
+                <p>pipx uses <a href="https://pypi.org/project/nox/">nox</a> for development, continuous integration testing, and automation.</p>
 <h2 id="developing-pipx">Developing pipx</h2>
-<p>To develop <code>pipx</code>, first clone the repository, have <code>tox</code> installed somewhere on your system, then run:</p>
-<pre><code>tox --notest
+<p>pipx uses pipx to develop -- it's recursive! But don't worry, it's not that scary. You'll be up in running in no time. You'll also need <code>make</code> installed. If you don't have <code>make</code>, you can look at pipx's <code>makefile</code> to see the what the make targets correspond to).</p>
+<p>To develop <code>pipx</code>, first clone the repository.</p>
+<p>Next, run this command which will use the amazing <a href="https://github.com/theacodes/nox">nox</a> automation framework to set up a virtual environment for each Python version pipx tests against.</p>
+<pre><code>make develop
 </code></pre>
 
-<p>This will perform an editable install of <code>pipx</code> for each environment listed in <code>envlist</code> in the <code>tox.ini</code>. Currently, this is only <code>py36</code>. Enter the virtualenv with <code>source .tox/py36/bin/activate</code>. Any changes you make to pipx source code will be reflected immediately in the virtualenv's <code>pipx</code> executable.</p>
-<p>Make sure your changes pass tests by first exiting the virtual environment, then running <code>tox</code>.</p>
+<p>A virtual environment with required dependencies is now sandboxed and ready to go in <code>.nox/develop-3.6</code> for Python 3.6. Any changes you make to pipx source code will be reflected immediately in the virtual environment inside <code>.nox/develop-3.6</code>.</p>
+<p>So how do you run with that environment?</p>
+<p>You can  either enter the virtual environment with <code>source .nox/develop-3.6/bin/activate</code> and run <code>pipx</code>, or you can run the development <code>pipx</code> directly with <code>.nox/develop-3.6/bin/pipx</code>. Either way, it's running directly from the source code you just cloned and will reflect any changes you make. In one case the command is a bit longer but your environment isn't modified. In the other, you can type <code>pipx</code> but you have to enter the virtual environment. Whichever you prefer will work fine. Go ahead and make your changes now.</p>
+<h2 id="testing-pipx-locally">Testing pipx locally</h2>
+<p>pipx uses the test automation framework <a href="https://github.com/theacodes/nox">nox</a>. Test definitions live in <code>noxfile.py</code>.</p>
+<p>Run tests by exiting any virtual environment, then running</p>
+<pre><code>make test
+</code></pre>
+
+<h2 id="testing-pipx-on-continuous-intergration-builds">Testing pipx on Continuous Intergration builds</h2>
+<p>When you push a new git branch, tests will automatically be run against your code as defined in <code>.travis</code>.</p>
 <h2 id="documentation">Documentation</h2>
-<p>Documentation is generated with <code>mkdocs</code> which generates documentation from several <code>.md</code> files in <code>docs</code>. Some of those <code>.md</code> files, as well as the main <code>README.md</code> file are generated from a <code>templates</code> directory.</p>
-<p>First, build the documentation virtualenv with <code>tox -e docs</code>. This will also build the documentation.</p>
-<p>If you make changes to any template files, enter the virtualenv: <code>source .tox/docs/bin/activate</code>. Rebuild the documentation with <code>mkdocs build</code>. To serve documentation, <code>mkdocs serve</code>. To publish documentation to GitHub pages, <code>mkdocs gh-deploy</code>.</p>
+<p>Documentation has a couple steps to it, both of which are automated. The first step is to generate markdown files from templates. See the <code>templates</code> directory. The generated files will have a header at the top indicating they were generated and shouldn't be manually modified. Modify the templates, not the generated markdown files.</p>
+<p>The second is to compile the markdown files in <code>docs</code> with <code>mkdocs</code>.</p>
+<p>Both of these steps are done in a single build command:</p>
+<pre><code>make docs
+</code></pre>
+
+<p>To preview changes, including live reloading, open another terminal and run</p>
+<pre><code>make watch_docs
+</code></pre>
+
+<p>If you make changes to the pipx cli api or any template, regenerate the <code>.md</code> files in the <code>docs</code> folder:</p>
+<pre><code>make docs
+</code></pre>
+
+<h3 id="publishing-doc-changes-to-github-pages">Publishing Doc Changes to GitHub pages</h3>
+<pre><code>make publish_docs
+</code></pre>
+
+<h2 id="release-new-pipx-version">Release New <code>pipx</code> Version</h2>
+<p>To create a new release
+* make sure the changelog is updated
+* update the version of pipx defined in <code>setup.py</code></p>
+<p>Finally, run</p>
+<pre><code>make publish
+</code></pre>
+
+<p>and don't forget to publish updated documenation.</p>
                 
                   
                 
