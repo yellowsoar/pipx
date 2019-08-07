@@ -304,38 +304,12 @@
     pipx install
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pipx-install-examples" title="pipx install examples" class="md-nav__link">
-    pipx install examples
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#pipx-run" title="pipx run" class="md-nav__link">
     pipx run
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pipx-run-examples" title="pipx run examples" class="md-nav__link">
-    pipx run examples
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -357,19 +331,6 @@
   <a href="#pipx-inject" title="pipx inject" class="md-nav__link">
     pipx inject
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pipx-inject-example" title="pipx inject example" class="md-nav__link">
-    pipx inject example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -399,19 +360,6 @@
     pipx list
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pipx-list-example" title="pipx list example" class="md-nav__link">
-    pipx list example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -429,6 +377,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../examples/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
   </li>
 
     
@@ -515,38 +475,12 @@
     pipx install
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pipx-install-examples" title="pipx install examples" class="md-nav__link">
-    pipx install examples
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#pipx-run" title="pipx run" class="md-nav__link">
     pipx run
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pipx-run-examples" title="pipx run examples" class="md-nav__link">
-    pipx run examples
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -568,19 +502,6 @@
   <a href="#pipx-inject" title="pipx inject" class="md-nav__link">
     pipx inject
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pipx-inject-example" title="pipx inject example" class="md-nav__link">
-    pipx inject example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -609,19 +530,6 @@
   <a href="#pipx-list" title="pipx list" class="md-nav__link">
     pipx list
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pipx-list-example" title="pipx list example" class="md-nav__link">
-    pipx list example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -664,13 +572,13 @@ usage: pipx [-h] [--version]
             {install,inject,upgrade,upgrade-all,uninstall,uninstall-all,reinstall-all,list,run,runpip,ensurepath,completions}
             ...
 
-Install and execute binaries from Python packages.
+Install and execute apps from Python packages.
 
 Binaries can either be installed globally into isolated Virtual Environments
 or run directly in an temporary Virtual Environment.
 
 Virtual Environment location is ~/.local/pipx/venvs.
-Symlinks to binaries are placed in ~/.local/bin.
+Symlinks to apps are placed in ~/.local/bin.
 These locations can be overridden with the environment variables
 PIPX_HOME and PIPX_BIN_DIR, respectively. (Virtual Environments will
 be installed to $PIPX_HOME/venvs)
@@ -694,12 +602,12 @@ subcommands:
                         executable
     list                List installed packages
     run                 Download the latest version of a package to a
-                        temporary virtual environment, then run a binary from
+                        temporary virtual environment, then run an app from
                         it. Also compatible with local `__pypackages__`
                         directory (experimental).
     runpip              Run pip in an existing pipx-managed Virtual
                         Environment
-    ensurepath          Ensure directory where pipx stores binaries is on your
+    ensurepath          Ensure directory where pipx stores apps is on your
                         PATH environment variable. Note that running this may
                         modify your shell's configuration file(s) such as
                         '~/.bashrc'.
@@ -715,12 +623,12 @@ usage: pipx install [-h] [--spec SPEC] [--include-deps] [--verbose] [--force]
                     [--index-url INDEX_URL] [--editable] [--pip-args PIP_ARGS]
                     package
 
-The install command is the preferred way to globally install binaries
+The install command is the preferred way to globally install apps
 from python packages on your system. It creates an isolated virtual
-environment for the package, then ensures the package's binaries are
+environment for the package, then ensures the package's apps are
 accessible on your $PATH.
 
-The result: binaries you can run from anywhere, located in packages
+The result: apps you can run from anywhere, located in packages
 you can cleanly upgrade or uninstall. Guaranteed to not have
 dependency version conflicts or interfere with your OS's python
 packages. 'sudo' is not required to do this.
@@ -737,7 +645,7 @@ The default virtual environment location is ~/.local/pipx
 and can be overridden by setting the environment variable `PIPX_HOME`
  (Virtual Environments will be installed to `$PIPX_HOME/venvs`).
 
-The default binary location is ~/.local/bin and can be
+The default app location is ~/.local/bin and can be
 overridden by setting the environment variable `PIPX_BIN_DIR`.
 
 positional arguments:
@@ -749,13 +657,13 @@ optional arguments:
                         passed to pip. Runs `pip install -U SPEC`. For example
                         `--spec mypackage==2.0.0` or `--spec
                         git+https://github.com/user/repo.git@branch`
-  --include-deps        Include binaries of dependent packages
+  --include-deps        Include apps of dependent packages
   --verbose
   --force               Install even when the package has already been
                         installed
   --python PYTHON       The Python executable used to create the Virtual
-                        Environment and run the associated binary/binaries.
-                        Must be v3.3+.
+                        Environment and run the associated app/apps. Must be
+                        v3.3+.
   --system-site-packages
                         Give the virtual environment access to the system
                         site-packages dir.
@@ -765,18 +673,6 @@ optional arguments:
   --pip-args PIP_ARGS   Arbitrary pip arguments to pass directly to pip
                         install/upgrade commands
 
-</code></pre>
-
-<h4 id="pipx-install-examples"><code>pipx install</code> examples</h4>
-<pre><code>pipx install pycowsay
-pipx install --python python3.6 pycowsay
-pipx install --python python3.7 pycowsay
-pipx install --spec git+https://github.com/ambv/black black
-pipx --spec git+https://github.com/ambv/black.git@branch-name black
-pipx --spec git+https://github.com/ambv/black.git@git-hash black
-pipx install --spec https://github.com/ambv/black/archive/18.9b0.zip black
-pipx install --spec black[d] black
-pipx install --include-deps jupyter
 </code></pre>
 
 <h3 id="pipx-run">pipx run</h3>
@@ -784,35 +680,35 @@ pipx install --include-deps jupyter
 usage: pipx run [-h] [--no-cache] [--pypackages] [--spec SPEC] [--verbose]
                 [--python PYTHON] [--system-site-packages]
                 [--index-url INDEX_URL] [--editable] [--pip-args PIP_ARGS]
-                binary [binary_args [binary_args ...]]
+                app ...
 
 Download the latest version of a package to a temporary virtual environment,
-then run a binary from it. The environment will be cached
+then run an app from it. The environment will be cached
 and re-used for up to 14 days. This
 means subsequent calls to 'run' for the same package will be faster
 since they can re-use the cached Virtual Environment.
 
-In support of PEP 582 'run' will use binaries found in a local __pypackages__
+In support of PEP 582 'run' will use apps found in a local __pypackages__
  directory, if present. Please note that this behavior is experimental,
  and is a acts as a companion tool to pythonloc. It may be modified or
  removed in the future. See https://github.com/cs01/pythonloc.
 
 positional arguments:
-  binary                binary/package name
-  binary_args           arguments passed to the binary when it is invoked
+  app                   app/package name
+  appargs               arguments passed to the application when it is invoked
 
 optional arguments:
   -h, --help            show this help message and exit
   --no-cache            Do not re-use cached virtual environment if it exists
-  --pypackages          Require binary to be run from local __pypackages__
+  --pypackages          Require app to be run from local __pypackages__
                         directory
   --spec SPEC           The package name or specific installation source
                         passed to pip. Runs `pip install -U SPEC`. For example
                         `--spec mypackage==2.0.0` or `--spec
                         git+https://github.com/user/repo.git@branch`
   --verbose
-  --python PYTHON       The Python version to run package's CLI binary with.
-                        Must be v3.3+.
+  --python PYTHON       The Python version to run package's CLI app with. Must
+                        be v3.3+.
   --system-site-packages
                         Give the virtual environment access to the system
                         site-packages dir.
@@ -822,27 +718,6 @@ optional arguments:
   --pip-args PIP_ARGS   Arbitrary pip arguments to pass directly to pip
                         install/upgrade commands
 
-</code></pre>
-
-<h4 id="pipx-run-examples"><code>pipx run</code> examples</h4>
-<p>pipx enables you to test various combinations of Python versions and package versions in ephemeral environments:</p>
-<pre><code>pipx run BINARY  # latest version of binary is run with python3
-pipx --spec PACKAGE==2.0.0 run BINARY  # specific version of package is run
-pipx --python 3.4 run BINARY  # Installed and invoked with specific Python version
-pipx --python 3.7 --spec PACKAGE=1.7.3 run BINARY
-pipx --spec git+https://url.git run BINARY  # latest version on master is run
-pipx --spec git+https://url.git@branch run BINARY
-pipx --spec git+https://url.git@hash run BINARY
-pipx run pycowsay moo
-pipx --version  # prints pipx version
-pipx run pycowsay  --version  # prints pycowsay version
-pipx --python pythonX pycowsay
-pipx --spec pycowsay==2.0 pycowsay --version
-pipx --spec git+https://github.com/ambv/black.git black
-pipx --spec git+https://github.com/ambv/black.git@branch-name black
-pipx --spec git+https://github.com/ambv/black.git@git-hash black
-pipx --spec https://github.com/ambv/black/archive/18.9b0.zip black --help
-pipx https://gist.githubusercontent.com/cs01/fa721a17a326e551ede048c5088f9e0f/raw/6bdfbb6e9c1132b1c38fdd2f195d4a24c540c324/pipx-demo.py
 </code></pre>
 
 <h3 id="pipx-upgrade">pipx upgrade</h3>
@@ -864,7 +739,7 @@ optional arguments:
                         passed to pip. Runs `pip install -U SPEC`. For example
                         `--spec mypackage==2.0.0` or `--spec
                         git+https://github.com/user/repo.git@branch`
-  --include-deps        Include binaries of dependent packages
+  --include-deps        Include apps of dependent packages
   --system-site-packages
                         Give the virtual environment access to the system
                         site-packages dir.
@@ -889,7 +764,7 @@ install --upgrade PACKAGE'
 
 optional arguments:
   -h, --help            show this help message and exit
-  --include-deps        Include binaries of dependent packages
+  --include-deps        Include apps of dependent packages
   --system-site-packages
                         Give the virtual environment access to the system
                         site-packages dir.
@@ -906,7 +781,7 @@ optional arguments:
 
 <h3 id="pipx-inject">pipx inject</h3>
 <pre><code>pipx inject --help
-usage: pipx inject [-h] [--include-binaries] [--include-deps]
+usage: pipx inject [-h] [--include-apps] [--include-deps]
                    [--system-site-packages] [--index-url INDEX_URL]
                    [--editable] [--pip-args PIP_ARGS] [--verbose]
                    package dependencies [dependencies ...]
@@ -920,8 +795,8 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --include-binaries    Add binaries from the injected packages onto your PATH
-  --include-deps        Include binaries of dependent packages
+  --include-apps        Add apps from the injected packages onto your PATH
+  --include-deps        Include apps of dependent packages
   --system-site-packages
                         Give the virtual environment access to the system
                         site-packages dir.
@@ -934,19 +809,12 @@ optional arguments:
 
 </code></pre>
 
-<h4 id="pipx-inject-example"><code>pipx inject</code> example</h4>
-<p>One use of the inject command is setting up a REPL with some useful extra packages.</p>
-<pre><code>pipx install ptpython
-pipx inject ptpython requests pendulum
-</code></pre>
-
-<p>After running the above commands, you will be able to import and use the <code>requests</code> and <code>pendulum</code> packages inside a <code>ptpython</code> repl.</p>
 <h3 id="pipx-uninstall">pipx uninstall</h3>
 <pre><code>pipx uninstall --help
 usage: pipx uninstall [-h] [--verbose] package
 
 Uninstalls a pipx-managed Virtual Environment by deleting it and any files
-that point to its binaries.
+that point to its apps.
 
 positional arguments:
   package
@@ -991,7 +859,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --include-deps        Include binaries of dependent packages
+  --include-deps        Include apps of dependent packages
   --system-site-packages
                         Give the virtual environment access to the system
                         site-packages dir.
@@ -1010,7 +878,7 @@ optional arguments:
 <pre><code>pipx list --help
 usage: pipx list [-h] [--verbose]
 
-List packages and binariess installed with pipx
+List packages and apps installed with pipx
 
 optional arguments:
   -h, --help  show this help message and exit
@@ -1018,20 +886,9 @@ optional arguments:
 
 </code></pre>
 
-<h4 id="pipx-list-example"><code>pipx list</code> example</h4>
-<pre><code>&gt; pipx list
-venvs are in /Users/user/.local/pipx/venvs
-binaries are exposed on your $PATH at /Users/user/.local/bin
-   package black 18.9b0, Python 3.7.0
-    - black
-    - blackd
-   package pipx 0.10.0, Python 3.7.0
-    - pipx
-</code></pre>
-
 <h3 id="pipx-runpip">pipx runpip</h3>
 <pre><code>pipx runpip --help
-usage: pipx runpip [-h] [--verbose] package [pipargs [pipargs ...]]
+usage: pipx runpip [-h] [--verbose] package ...
 
 Run pip in an existing pipx-managed Virtual Environment
 
@@ -1080,13 +937,13 @@ optional arguments:
           </a>
         
         
-          <a href="../comparisons/" title="Comparison to Other Tools" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../examples/" title="Examples" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Comparison to Other Tools
+                Examples
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

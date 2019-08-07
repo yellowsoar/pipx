@@ -285,6 +285,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../examples/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../comparisons/" title="Comparison to Other Tools" class="md-nav__link">
       Comparison to Other Tools
     </a>
@@ -363,7 +375,18 @@
                 
                   <h1>Changelog</h1>
                 
-                <p>0.13.2.2</p>
+                <p>0.14.0.0</p>
+<ul>
+<li>Speed up operations by using shared venv for <code>pip</code>, <code>setuptools</code>, and <code>wheel</code>. You can see more detail in the 'how pipx works' section of the documentation. (#164, @pfmoore)</li>
+<li>Breaking change: for the <code>inject</code> command, change <code>--include-binaries</code> to <code>--include-apps</code></li>
+<li>Change all terminology from <code>binary</code> to <code>app</code> or <code>application</code></li>
+<li>Improve argument parsing for <code>pipx run</code> and <code>pipx runpip</code></li>
+</ul>
+<p>0.13.2.3</p>
+<ul>
+<li>Fix regression when installing a package that doesn't have any entry points</li>
+</ul>
+<p>0.13.2.2</p>
 <ul>
 <li>Remove unneccesary and sometimes incorrect check after <code>pipx inject</code> (#195)</li>
 <li>Make status text/animation reliably disappear before continuing</li>

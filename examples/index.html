@@ -38,7 +38,7 @@
     
     
       
-        <title>How pipx works - pipx</title>
+        <title>Examples - pipx</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#how-it-works" tabindex="1" class="md-skip">
+      <a href="#pipx-install-examples" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -130,7 +130,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                How pipx works
+                Examples
               
             </span>
           
@@ -287,11 +287,66 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../examples/" title="Examples" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Examples
+      </label>
+    
+    <a href="./" title="Examples" class="md-nav__link md-nav__link--active">
       Examples
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-install-examples" title="pipx install examples" class="md-nav__link">
+    pipx install examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-run-examples" title="pipx run examples" class="md-nav__link">
+    pipx run examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-inject-example" title="pipx inject example" class="md-nav__link">
+    pipx inject example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-list-example" title="pipx list example" class="md-nav__link">
+    pipx list example
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -311,52 +366,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        How pipx works
-      </label>
-    
-    <a href="./" title="How pipx works" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../how-pipx-works/" title="How pipx works" class="md-nav__link">
       How pipx works
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" title="How it Works" class="md-nav__link">
-    How it Works
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#developing-for-pipx" title="Developing for pipx" class="md-nav__link">
-    Developing for pipx
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -415,15 +429,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" title="How it Works" class="md-nav__link">
-    How it Works
+  <a href="#pipx-install-examples" title="pipx install examples" class="md-nav__link">
+    pipx install examples
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#developing-for-pipx" title="Developing for pipx" class="md-nav__link">
-    Developing for pipx
+  <a href="#pipx-run-examples" title="pipx run examples" class="md-nav__link">
+    pipx run examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-inject-example" title="pipx inject example" class="md-nav__link">
+    pipx inject example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipx-list-example" title="pipx list example" class="md-nav__link">
+    pipx list example
   </a>
   
 </li>
@@ -444,55 +472,61 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/pipxproject/pipx/edit/master/docs/how-pipx-works.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/pipxproject/pipx/edit/master/docs/examples.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>How pipx works</h1>
+                  <h1>Examples</h1>
                 
-                <h2 id="how-it-works">How it Works</h2>
-<p>When installing a package and its binaries (<code>pipx install package</code>) pipx will</p>
-<ul>
-<li>create directory ~/.local/pipx/venvs/PACKAGE</li>
-<li>create or re-use a shared virtual environment that contains shared packaging libraries <code>pip</code>, <code>setuptools</code> and <code>wheel</code> in <code>~/.local/pipx/shared/</code></li>
-<li>ensure all packaging libraries are updated to their latest versions</li>
-<li>create a Virtual Environment in ~/.local/pipx/venvs/PACKAGE that uses the shared pip mentioned above but otherwise is isolated (pipx uses a <a href="https://docs.python.org/3/library/site.html">.pth file</a> to do this)</li>
-<li>install the desired package in the Virtual Environment</li>
-<li>expose binaries at <code>~/.local/bin</code> that point to new binaries in <code>~/.local/pipx/venvs/PACKAGE/bin</code> (such as <code>~/.local/bin/black</code> -&gt; <code>~/.local/pipx/venvs/black/bin/black</code>)</li>
-<li>As long as <code>~/.local/bin/</code> is on your PATH, you can now invoke the new binaries globally</li>
-</ul>
-<p>When running a binary (<code>pipx run BINARY</code>), pipx will</p>
-<ul>
-<li>create or re-use a shared virtual environment that contains shared packaging libraries <code>pip</code>, <code>setuptools</code> and <code>wheel</code> in <code>~/.local/pipx/shared/</code></li>
-<li>ensure all packaging libraries are updated to their latest versions</li>
-<li>create a temporary directory (or reuse a cached virtual environment for this package) with a name based on a hash of the attributes that make the run reproducible. This includes things like the package name, spec, python version, and pip arguments.</li>
-<li>create a Virtual Environment inside it with <code>python -m venv</code></li>
-<li>install the desired package in the Virtual Environment</li>
-<li>invoke the binary</li>
-</ul>
-<p>These are all things you can do yourself, but pipx automates them for you. If you are curious as to what pipx is doing behind the scenes, you can always pass the <code>--verbose</code> flag to see every single command and argument being run.</p>
-<h2 id="developing-for-pipx">Developing for pipx</h2>
-<p>If you are a developer and want to be able to run</p>
-<pre><code>pipx install MY_PACKAGE
+                <h2 id="pipx-install-examples"><code>pipx install</code> examples</h2>
+<pre><code>pipx install pycowsay
+pipx install --python python3.6 pycowsay
+pipx install --python python3.7 pycowsay
+pipx install --spec git+https://github.com/ambv/black black
+pipx --spec git+https://github.com/ambv/black.git@branch-name black
+pipx --spec git+https://github.com/ambv/black.git@git-hash black
+pipx install --spec https://github.com/ambv/black/archive/18.9b0.zip black
+pipx install --spec black[d] black
+pipx install --include-deps jupyter
 </code></pre>
 
-<p>make sure you include an <code>entry_points</code> section in your <code>setup.py</code> file.</p>
-<pre><code>setup(
-    # other arguments here...
-    entry_points={
-        'console_scripts': [
-            'foo = my_package.some_module:main_func',
-            'bar = other_module:some_func',
-        ],
-        'gui_scripts': [
-            'baz = my_package_gui:start_func',
-        ]
-    }
-)
+<h2 id="pipx-run-examples"><code>pipx run</code> examples</h2>
+<p>pipx enables you to test various combinations of Python versions and package versions in ephemeral environments:</p>
+<pre><code>pipx run BINARY  # latest version of binary is run with python3
+pipx --spec PACKAGE==2.0.0 run BINARY  # specific version of package is run
+pipx --python 3.4 run BINARY  # Installed and invoked with specific Python version
+pipx --python 3.7 --spec PACKAGE=1.7.3 run BINARY
+pipx --spec git+https://url.git run BINARY  # latest version on master is run
+pipx --spec git+https://url.git@branch run BINARY
+pipx --spec git+https://url.git@hash run BINARY
+pipx run pycowsay moo
+pipx --version  # prints pipx version
+pipx run pycowsay  --version  # prints pycowsay version
+pipx --python pythonX pycowsay
+pipx --spec pycowsay==2.0 pycowsay --version
+pipx --spec git+https://github.com/ambv/black.git black
+pipx --spec git+https://github.com/ambv/black.git@branch-name black
+pipx --spec git+https://github.com/ambv/black.git@git-hash black
+pipx --spec https://github.com/ambv/black/archive/18.9b0.zip black --help
+pipx https://gist.githubusercontent.com/cs01/fa721a17a326e551ede048c5088f9e0f/raw/6bdfbb6e9c1132b1c38fdd2f195d4a24c540c324/pipx-demo.py
 </code></pre>
 
-<p>In this case <code>main_func</code> and <code>some_func</code> would be available to pipx after installing the above example package.</p>
-<p>For a real-world example, see <a href="https://github.com/cs01/pycowsay/blob/master/setup.py">pycowsay</a>'s <code>setup.py</code> source code.</p>
-<p>You can read more about entry points <a href="https://setuptools.readthedocs.io/en/latest/setuptools.html#automatic-script-creation">here</a>.</p>
+<h2 id="pipx-inject-example"><code>pipx inject</code> example</h2>
+<p>One use of the inject command is setting up a REPL with some useful extra packages.</p>
+<pre><code>pipx install ptpython
+pipx inject ptpython requests pendulum
+</code></pre>
+
+<p>After running the above commands, you will be able to import and use the <code>requests</code> and <code>pendulum</code> packages inside a <code>ptpython</code> repl.</p>
+<h2 id="pipx-list-example"><code>pipx list</code> example</h2>
+<pre><code>&gt; pipx list
+venvs are in /Users/user/.local/pipx/venvs
+binaries are exposed on your $PATH at /Users/user/.local/bin
+   package black 18.9b0, Python 3.7.0
+    - black
+    - blackd
+   package pipx 0.10.0, Python 3.7.0
+    - pipx
+</code></pre>
                 
                   
                 
@@ -513,7 +547,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../comparisons/" title="Comparison to Other Tools" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../docs/" title="Docs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -522,19 +556,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Comparison to Other Tools
+                Docs
               </span>
             </div>
           </a>
         
         
-          <a href="../programs-to-try/" title="Programs to Try" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../comparisons/" title="Comparison to Other Tools" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Programs to Try
+                Comparison to Other Tools
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
