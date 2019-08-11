@@ -613,16 +613,41 @@ apps are exposed on your $PATH at /home/user/.local/bin
 <h3 id="walkthrough-running-an-application-in-a-temporary-sandboxed-environment">Walkthrough: Running an Application in a Temporary, Sandboxed Environment</h3>
 <p>I find this handy when I occasionally run an app and want to use the latest version of it, but don't necessarily need it installed on my computer. You may want to do this when you are initializing a new project and want to set up the right directory structure, when you want to view the help text of an application, or if you simply want to run an app in a one-off case.</p>
 <p>For example, the blog post <a href="https://sourcery.ai/blog/python-best-practices/">How to set up a perfect Python project</a> uses <code>pipx run</code> to kickstart a new project with <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>.</p>
-<p>A nice side benefit is that you don't have to remember to upgrade the app it since <code>pipx run</code> will automatically run a recent version for you.</p>
+<p>A nice side benefit is that you don't have to remember to upgrade the app since <code>pipx run</code> will automatically run a recent version for you.</p>
 <p>Okay, let's see what this looks like in practice!</p>
 <pre><code>pipx run APP [ARGS...]
 </code></pre>
 
-<p>This will install the package in an isolated, temporary directory and invoke the app. Try it!</p>
-<pre><code>pipx run pycowsay moo
+<p>This will install the package in an isolated, temporary directory and invoke the app. Give it a try:</p>
+<pre><code>&gt; pipx run pycowsay moo
+
+  ---
+&lt; moo &gt;
+  ---
+   \   ^__^
+    \  (oo)\_______
+       (__)\       )\/\
+           ||----w |
+           ||     ||
+
+
 </code></pre>
 
 <p>Notice that you <strong>don't need to execute any install commands to run the app</strong>.</p>
+<p>Any arguments after the application name will be passed directly to the application:</p>
+<pre><code>&gt; pipx run pycowsay these arguments are all passed to pycowsay!
+
+  -------------------------------------------
+&lt; these arguments are all passed to pycowsay! &gt;
+  -------------------------------------------
+   \   ^__^
+    \  (oo)\_______
+       (__)\       )\/\
+           ||----w |
+           ||     ||
+
+</code></pre>
+
 <p>Re-running the same app is quick because pipx caches Virtual Environments on a per-app basis. The caches only last a few days, and when they expire, pipx will again use the latest version of the package. This way you can be sure you're always running a new version of the package without having to manually upgrade.</p>
 <p>You can run .py files directly, too.</p>
 <pre><code>pipx run https://gist.githubusercontent.com/cs01/fa721a17a326e551ede048c5088f9e0f/raw/6bdfbb6e9c1132b1c38fdd2f195d4a24c540c324/pipx-demo.py
