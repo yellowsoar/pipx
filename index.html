@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.0284f74d.css">
+      <link rel="stylesheet" href="assets/stylesheets/application.30686662.css">
       
       
     
@@ -196,7 +196,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -268,14 +268,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-pipx" title="Install pipx" class="md-nav__link">
+  <a href="#install-pipx" class="md-nav__link">
     Install pipx
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#overview-what-is-pipx" title="Overview: What is pipx?" class="md-nav__link">
+  <a href="#overview-what-is-pipx" class="md-nav__link">
     Overview: What is pipx?
   </a>
   
@@ -283,15 +283,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#walkthrough-installing-a-package-and-its-applications-with-pipx" title="Walkthrough: Installing a Package and its Applications With pipx" class="md-nav__link">
+  <a href="#walkthrough-installing-a-package-and-its-applications-with-pipx" class="md-nav__link">
     Walkthrough: Installing a Package and its Applications With pipx
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#walkthrough-running-an-application-in-a-temporary-sandboxed-environment" title="Walkthrough: Running an Application in a Temporary, Sandboxed Environment" class="md-nav__link">
+  <a href="#walkthrough-running-an-application-in-a-temporary-sandboxed-environment" class="md-nav__link">
     Walkthrough: Running an Application in a Temporary, Sandboxed Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
@@ -302,15 +309,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#testimonials" title="Testimonials" class="md-nav__link">
+  <a href="#testimonials" class="md-nav__link">
     Testimonials
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#credits" title="Credits" class="md-nav__link">
+  <a href="#credits" class="md-nav__link">
     Credits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    Contributing
   </a>
   
 </li>
@@ -455,14 +469,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-pipx" title="Install pipx" class="md-nav__link">
+  <a href="#install-pipx" class="md-nav__link">
     Install pipx
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#overview-what-is-pipx" title="Overview: What is pipx?" class="md-nav__link">
+  <a href="#overview-what-is-pipx" class="md-nav__link">
     Overview: What is pipx?
   </a>
   
@@ -470,15 +484,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#walkthrough-installing-a-package-and-its-applications-with-pipx" title="Walkthrough: Installing a Package and its Applications With pipx" class="md-nav__link">
+  <a href="#walkthrough-installing-a-package-and-its-applications-with-pipx" class="md-nav__link">
     Walkthrough: Installing a Package and its Applications With pipx
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#walkthrough-running-an-application-in-a-temporary-sandboxed-environment" title="Walkthrough: Running an Application in a Temporary, Sandboxed Environment" class="md-nav__link">
+  <a href="#walkthrough-running-an-application-in-a-temporary-sandboxed-environment" class="md-nav__link">
     Walkthrough: Running an Application in a Temporary, Sandboxed Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
@@ -489,15 +510,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#testimonials" title="Testimonials" class="md-nav__link">
+  <a href="#testimonials" class="md-nav__link">
     Testimonials
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#credits" title="Credits" class="md-nav__link">
+  <a href="#credits" class="md-nav__link">
     Credits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    Contributing
   </a>
   
 </li>
@@ -566,7 +594,7 @@ python3 -m pipx ensurepath
 <p>pipx is a tool to help you install and run end-user applications written in Python. pipx <strong>is not</strong> a tool for development or publishing of your code -- it's only for consuming already published packages.</p>
 <p>If you are familiar macOS's <code>brew</code>, it's kind of like that but for Python applications. If you are familiar with JavaScript's <a href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">npx</a>, it's kind of like that but also allows you to install packages. If you are familiar with <code>pip</code>, it's kind of like that but is only focused on installing packages that have entry points.</p>
 <p>pipx does not ship with pip, but installing it is often an important part of bootstrapping your system.</p>
-<p>Python and PyPI allow developers to distribute code with "console script entry points". These scripts let users call into Python code from the command line, effectively acting like standalone applications. <code>pipx</code> is a tool to install and run any of these thousands of Python applications available on PyPI in a safe, convenient, and reliable way. <strong>In a way, it turns Python Package Index (PyPI) into a big app store for Python applications.</strong> Not all Python packages have entry points, but many do. <code>pipx</code> is <strong>not</strong> a tool to install a library and <code>import</code> it in your Python code.</p>
+<p>Python and PyPI allow developers to distribute code with "console script entry points". These scripts let users call into Python code from the command line, effectively acting like standalone applications. <code>pipx</code> is a tool to install and run any of these thousands of Python applications available on PyPI in a safe, convenient, and reliable way. <strong>In a way, it turns Python Package Index (PyPI) into a big app store for Python applications.</strong> Not all Python packages have entry points, but many do.</p>
 <p><code>pipx</code> enables you to:</p>
 <ul>
 <li>Safely install packages to isolated environments, while globally exposing their CLI entry points so you can run them from anywhere (see the <code>install</code> command). This guarantees no dependency conflicts and clean uninstalls!</li>
@@ -654,6 +682,8 @@ apps are exposed on your $PATH at /home/user/.local/bin
 pipx is working!
 </code></pre>
 
+<h3 id="summary">Summary</h3>
+<p>That's it! Those are the most important commands <code>pipx</code> offers. To see all of pipx's documentation, run <code>pipx --help</code> or see the <a href="https://pipxproject.github.io/pipx/docs/">docs</a>.</p>
 <h2 id="testimonials">Testimonials</h2>
 <p>"<em>I'm a big fan of pipx. I think pipx is super cool.</em>"
 <div style="text-align: right; margin-right: 10%;">
@@ -668,23 +698,15 @@ pipx is working!
 —Mason Egger in a <a href="https://medium.com/homeaway-tech-blog/simplify-your-python-developer-environment-aba90f32dddb">blog post</a>
 </div></p>
 <h2 id="credits">Credits</h2>
-<p>pipx was inspired by <a href="https://github.com/mitsuhiko/pipsi">pipsi</a> and <a href="https://github.com/zkat/npx">npx</a>.</p>
-<p>Creator/Maintainer</p>
-<ul>
-<li><a href="https://github.com/cs01/">Chad Smith</a></li>
-</ul>
-<p>Contributors</p>
-<ul>
-<li><a href="https://github.com/neersighted">Bjorn Neergaard</a></li>
-<li><a href="https://github.com/aiguofer">Diego Fernandez</a></li>
-<li><a href="https://github.com/jaraco">Jason R. Coombs</a></li>
-<li><a href="https://github.com/joshuarli">joshuarli</a></li>
-<li><a href="https://github.com/pfmoore">Paul Moore</a></li>
-<li><a href="https://github.com/tkossak">tkossak</a></li>
-<li><a href="https://github.com/uranusjr">Tzu-ping Chung</a></li>
-<li><a href="https://github.com/sahensley">Shawn Hensley</a></li>
-</ul>
-<p>Logo by <a href="https://github.com/IrishMorales">@IrishMorales</a>.</p>
+<p>pipx was inspired by <a href="https://github.com/mitsuhiko/pipsi">pipsi</a> and <a href="https://github.com/zkat/npx">npx</a>. It was created by <a href="https://github.com/cs01/">Chad Smith</a> and has had lots of help from <a href="https://github.com/pipxproject/pipx/graphs/contributors">contributors</a>. The logo was created by <a href="https://github.com/IrishMorales">@IrishMorales</a>.</p>
+<p>pipx is maintained by a team of volunteers (in alphabetical order)
+- <a href="https://github.com/gaborbernat">Bernát Gábor</a>
+- <a href="https://github.com/cs01">Chad Smith</a>
+- <a href="https://github.com/aiguofer">Diego Fernandez</a>
+- <a href="https://github.com/itsayellow">Matthew Clapp</a>
+- <a href="https://github.com/sahensley">Shawn Hensley</a></p>
+<h2 id="contributing">Contributing</h2>
+<p>Issues and Pull Requests are definitely welcome! Check out <a href="https://pipxproject.github.io/pipx/contributing/">Contributing</a> to get started.</p>
                 
                   
                 
@@ -740,7 +762,7 @@ pipx is working!
       
     </div>
     
-      <script src="assets/javascripts/application.245445c6.js"></script>
+      <script src="assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
       
