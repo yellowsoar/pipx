@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="assets/stylesheets/application.1b62728e.css">
       
       
     
     
-      <script src="assets/javascripts/modernizr.74668098.js"></script>
+      <script src="assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -572,7 +572,7 @@ See Contributing for how to update this file.
 <a href="https://travis-ci.org/pipxproject/pipx"><img src="https://travis-ci.org/pipxproject/pipx.svg?branch=master" /></a>
 
 <a href="https://pypi.python.org/pypi/pipx/">
-<img src="https://img.shields.io/badge/pypi-0.14.0.0-blue.svg" /></a>
+<img src="https://img.shields.io/badge/pypi-0.15.0.0-blue.svg" /></a>
 <a href="https://github.com/ambv/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 </p>
 
@@ -580,6 +580,13 @@ See Contributing for how to update this file.
 <p><strong>Source Code</strong>: https://github.com/pipxproject/pipx</p>
 <p><em>For comparison to other tools including pipsi, see <a href="https://pipxproject.github.io/pipx/comparisons/">Comparison to Other Tools</a>.</em></p>
 <h2 id="install-pipx">Install pipx</h2>
+<p>On macOS:</p>
+<pre><code>brew install pipx
+pipx ensurepath
+</code></pre>
+
+<p>Upgrade pipx with <code>brew update &amp;&amp; brew upgrade pipx</code>.</p>
+<p>Otherwise, install via pip:</p>
 <pre><code>python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 </code></pre>
@@ -699,16 +706,19 @@ pipx is working!
 </div></p>
 <h2 id="credits">Credits</h2>
 <p>pipx was inspired by <a href="https://github.com/mitsuhiko/pipsi">pipsi</a> and <a href="https://github.com/zkat/npx">npx</a>. It was created by <a href="https://github.com/cs01/">Chad Smith</a> and has had lots of help from <a href="https://github.com/pipxproject/pipx/graphs/contributors">contributors</a>. The logo was created by <a href="https://github.com/IrishMorales">@IrishMorales</a>.</p>
-<p>pipx is maintained by a team of volunteers (in alphabetical order)
-- <a href="https://github.com/gaborbernat">Bernát Gábor</a>
-- <a href="https://github.com/cs01">Chad Smith</a>
-- <a href="https://github.com/aiguofer">Diego Fernandez</a>
-- <a href="https://github.com/itsayellow">Matthew Clapp</a>
-- <a href="https://github.com/sahensley">Shawn Hensley</a></p>
+<p>pipx is maintained by a team of volunteers (in alphabetical order)</p>
+<ul>
+<li><a href="https://github.com/gaborbernat">Bernát Gábor</a></li>
+<li><a href="https://github.com/cs01">Chad Smith</a></li>
+<li><a href="https://github.com/aiguofer">Diego Fernandez</a></li>
+<li><a href="https://github.com/itsayellow">Matthew Clapp</a></li>
+<li><a href="https://github.com/sahensley">Shawn Hensley</a></li>
+</ul>
 <h2 id="contributing">Contributing</h2>
 <p>Issues and Pull Requests are definitely welcome! Check out <a href="https://pipxproject.github.io/pipx/contributing/">Contributing</a> to get started.</p>
                 
                   
+                
                 
               
               
@@ -762,7 +772,7 @@ pipx is working!
       
     </div>
     
-      <script src="assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
       

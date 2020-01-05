@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -375,7 +375,26 @@
                 
                   <h1>Changelog</h1>
                 
-                <p>0.14.0.0</p>
+                <p>0.15.0.0</p>
+<p>Upgrade instructions: When upgrading to 0.15.0.0 or above from a pre-0.15.0.0 version, you must re-install all packages to take advantage of the new persistent pipx metadata files introduced in this release. These metadata files store pip specification values, injected packages, any custom pip arguments, and more in each main package's venv. You can do this by running <code>pipx reinstall-all</code> or <code>pipx uninstall-all</code>, then reinstalling manually.</p>
+<ul>
+<li><code>install</code> now has no <code>--spec</code> option. You may specify any valid pip specification for <code>install</code>'s main argument.</li>
+<li><code>inject</code> will now accept pip specifications for dependency arguments</li>
+<li>Metadata is now stored for each application installed, including install options like <code>--spec</code>, and injected packages. This information allows upgrade, upgrade-all and reinstall-all to work properly even with non-pypi installed packages. (#222)</li>
+<li><code>upgrade</code> options <code>--spec</code> and <code>--include-deps</code> were removed. Pipx now uses the original options used to install each application instead. (#222)</li>
+<li><code>upgrade-all</code> options <code>--include-deps</code>, <code>--system-site-packages</code>, <code>--index-url</code>, <code>--editable</code>, and <code>--pip-args</code> were removed. Pipx now uses the original options used to install each application instead. (#222)</li>
+<li><code>reinstall-all</code> options <code>--include-deps</code>, <code>--system-site-packages</code>, <code>--index-url</code>, <code>--editable</code>, and <code>--pip-args</code> were removed. Pipx now uses the original options used to install each application instead. (#222)</li>
+<li>Handle missing interpreters more gracefully (#146)</li>
+<li>Change <code>reinstall-all</code> to use system python by default for apps. Now use <code>--python</code> option to specify a different python version.</li>
+<li>Remove the PYTHONPATH environment variable when executing any command to prevent conflicts between pipx dependencies and package dependencies when pipx is installed via homebrew. Homebrew can use pythonpath manipulation instead of virtual environments. (#233)</li>
+<li>Add printed summary after successful call to <code>pipx inject</code></li>
+<li>Support associating apps with Python 3.5</li>
+<li>Improvements to animation status text</li>
+<li>Make <code>--python</code> argument in <code>reinstall-all</code> command optional</li>
+<li>Use threads on OS's without support for semaphores</li>
+<li>Stricter parsing when passing <code>--</code> argument as delimeter</li>
+</ul>
+<p>0.14.0.0</p>
 <ul>
 <li>Speed up operations by using shared venv for <code>pip</code>, <code>setuptools</code>, and <code>wheel</code>. You can see more detail in the 'how pipx works' section of the documentation. (#164, @pfmoore)</li>
 <li>Breaking change: for the <code>inject</code> command, change <code>--include-binaries</code> to <code>--include-apps</code></li>
@@ -520,6 +539,7 @@
                 
                   
                 
+                
               
               
                 
@@ -572,7 +592,7 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
