@@ -287,6 +287,19 @@
     Install pipx
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-options" class="md-nav__link">
+    Installation Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -298,8 +311,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation-options" class="md-nav__link">
-    Installation Options
+  <a href="#note-upgrading-pipx-from-a-pre-01500-version-to-01500-or-later" class="md-nav__link">
+    Note: Upgrading pipx from a pre-0.15.0.0 version to 0.15.0.0 or later
   </a>
   
 </li>
@@ -460,6 +473,19 @@
     Install pipx
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-options" class="md-nav__link">
+    Installation Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -471,8 +497,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation-options" class="md-nav__link">
-    Installation Options
+  <a href="#note-upgrading-pipx-from-a-pre-01500-version-to-01500-or-later" class="md-nav__link">
+    Note: Upgrading pipx from a pre-0.15.0.0 version to 0.15.0.0 or later
   </a>
   
 </li>
@@ -527,13 +553,17 @@
 python3 -m pipx ensurepath
 </code></pre>
 
+<h3 id="installation-options">Installation Options</h3>
+<p>pipx's default binary location is <code>~/.local/bin</code>. This can be overriden with the environment variable <code>PIPX_BIN_DIR</code>.</p>
+<p>pipx's default virtual environment location is <code>~/.local/pipx</code>. This can be overridden with the environment variable <code>PIPX_HOME</code>.</p>
 <h2 id="upgrade-pipx">Upgrade pipx</h2>
 <pre><code>python3 -m pip install -U pipx
 </code></pre>
 
-<h3 id="installation-options">Installation Options</h3>
-<p>pipx's default binary location is <code>~/.local/bin</code>. This can be overriden with the environment variable <code>PIPX_BIN_DIR</code>.</p>
-<p>pipx's default virtual environment location is <code>~/.local/pipx</code>. This can be overridden with the environment variable <code>PIPX_HOME</code>.</p>
+<h3 id="note-upgrading-pipx-from-a-pre-01500-version-to-01500-or-later">Note: Upgrading pipx from a pre-0.15.0.0 version to 0.15.0.0 or later</h3>
+<p>When upgrading to pipx 0.15.0.0 or above from a pre-0.15.0.0 version, you must re-install all packages to take advantage of the new persistent pipx metadata files introduced in the 0.15.0.0 release. These metadata files store pip specification values, injected packages, any custom pip arguments, and more in each main package's venv.</p>
+<p>If you have no packages installed using the <code>--spec</code> option, and no venvs with injected packages, you can do this by running <code>pipx reinstall-all</code>.</p>
+<p>If you have any packages installed using the <code>--spec</code> option or venvs with injected packages, you should reinstall packages manually using <code>pipx uninstall-all</code>, followed by <code>pipx install</code> and possibly <code>pipx inject</code>.</p>
 <h2 id="shell-completion">Shell Completion</h2>
 <p>You can easily get your shell's tab completions working by following instructions printed with this command:</p>
 <pre><code>pipx completions

@@ -572,7 +572,7 @@ See Contributing for how to update this file.
 <a href="https://travis-ci.org/pipxproject/pipx"><img src="https://travis-ci.org/pipxproject/pipx.svg?branch=master" /></a>
 
 <a href="https://pypi.python.org/pypi/pipx/">
-<img src="https://img.shields.io/badge/pypi-0.15.0.0-blue.svg" /></a>
+<img src="https://img.shields.io/badge/pypi-0.15.1.0-blue.svg" /></a>
 <a href="https://github.com/ambv/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 </p>
 
@@ -646,8 +646,9 @@ apps are exposed on your $PATH at /home/user/.local/bin
 </code></pre>
 
 <h3 id="walkthrough-running-an-application-in-a-temporary-sandboxed-environment">Walkthrough: Running an Application in a Temporary, Sandboxed Environment</h3>
-<p>I find this handy when I occasionally run an app and want to use the latest version of it, but don't necessarily need it installed on my computer. You may want to do this when you are initializing a new project and want to set up the right directory structure, when you want to view the help text of an application, or if you simply want to run an app in a one-off case.</p>
-<p>For example, the blog post <a href="https://sourcery.ai/blog/python-best-practices/">How to set up a perfect Python project</a> uses <code>pipx run</code> to kickstart a new project with <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>.</p>
+<p>I find this handy when I need to run the latest version of an app, but don't necessarily need it installed on my computer.</p>
+<p>You may want to do this when you are initializing a new project and want to set up the right directory structure, when you want to view the help text of an application, or if you simply want to run an app in a one-off case and and leave your system untouched afterwards.</p>
+<p>For example, the blog post <a href="https://sourcery.ai/blog/python-best-practices/">How to set up a perfect Python project</a> uses <code>pipx run</code> to kickstart a new project with <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>, a tool that creates projects from project templates.</p>
 <p>A nice side benefit is that you don't have to remember to upgrade the app since <code>pipx run</code> will automatically run a recent version for you.</p>
 <p>Okay, let's see what this looks like in practice!</p>
 <pre><code>pipx run APP [ARGS...]
@@ -692,18 +693,33 @@ pipx is working!
 <h3 id="summary">Summary</h3>
 <p>That's it! Those are the most important commands <code>pipx</code> offers. To see all of pipx's documentation, run <code>pipx --help</code> or see the <a href="https://pipxproject.github.io/pipx/docs/">docs</a>.</p>
 <h2 id="testimonials">Testimonials</h2>
-<p>"<em>I'm a big fan of pipx. I think pipx is super cool.</em>"
-<div style="text-align: right; margin-right: 10%;">
+<div>
+"Thanks for improving the workflow that pipsi has covered in the past. Nicely done!"
+<div style="text-align: right; margin-right: 10%; font-style:italic;">
+—<a href="https://twitter.com/jezdez">Jannis Leidel</a>, PSF fellow, former pip and Django core developer, and founder of the Python Packaging Authority (PyPA)
+</div>
+</div>
+
+<p></p>
+
+<div>
+"My setup pieces together pyenv, poetry, and pipx. [...] For the things I need, it’s perfect."
+<div style="text-align: right; margin-right: 10%; font-style:italic;">
+—<a href="https://twitter.com/mkennedy">Jacob Moss</a>, co-creator of Django in blog post <a href="https://jacobian.org/2019/nov/11/python-environment-2020/">My Python Development Environment, 2020 Edition</a>
+</div>
+</div>
+
+<p></p>
+
+<div>
+"I'm a big fan of pipx. I think pipx is super cool."
+<div style="text-align: right; margin-right: 10%; font-style:italic;">
 —<a href="https://twitter.com/mkennedy">Michael Kennedy</a>, co-host of PythonBytes podcast in <a href="https://pythonbytes.fm/episodes/transcript/139/f-yes-for-the-f-strings">episode 139</a>
-</div></p>
-<p>"<em>Thanks for improving the workflow that pipsi has covered in the past. Nicely done!</em>"
-<div style="text-align: right; margin-right: 10%;">
-—<a href="https://twitter.com/jezdez">Jannis Leidel</a>, PSF fellow and former pip maintainer
-</div></p>
-<p>"<em>This tool filled in the gap that was missing with pipenv and Virtual Environmentwrapper.</em>"
-<div style="text-align: right; margin-right: 10%;">
-—Mason Egger in a <a href="https://medium.com/homeaway-tech-blog/simplify-your-python-developer-environment-aba90f32dddb">blog post</a>
-</div></p>
+</div>
+</div>
+
+<p></p>
+
 <h2 id="credits">Credits</h2>
 <p>pipx was inspired by <a href="https://github.com/mitsuhiko/pipsi">pipsi</a> and <a href="https://github.com/zkat/npx">npx</a>. It was created by <a href="https://github.com/cs01/">Chad Smith</a> and has had lots of help from <a href="https://github.com/pipxproject/pipx/graphs/contributors">contributors</a>. The logo was created by <a href="https://github.com/IrishMorales">@IrishMorales</a>.</p>
 <p>pipx is maintained by a team of volunteers (in alphabetical order)</p>
