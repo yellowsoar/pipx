@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#dependencies" tabindex="1" class="md-skip">
+      <a href="#running-pipx-from-source-tree" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -360,23 +360,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#running-pipx-from-source-tree" class="md-nav__link">
+    Running pipx From Source Tree
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#developing-pipx" class="md-nav__link">
-    Developing pipx
+  <a href="#running-tests" class="md-nav__link">
+    Running Tests
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-pipx-locally" class="md-nav__link">
-    Testing pipx locally
+        
+          <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    Unit Tests
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lint-tests" class="md-nav__link">
+    Lint Tests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -388,8 +408,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    Documentation
+  <a href="#building-documentation" class="md-nav__link">
+    Building Documentation
   </a>
   
     <nav class="md-nav">
@@ -408,8 +428,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#release-new-pipx-version" class="md-nav__link">
-    Release New pipx Version
+  <a href="#releasing-new-pipx-versions" class="md-nav__link">
+    Releasing New pipx Versions
   </a>
   
 </li>
@@ -456,23 +476,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#running-pipx-from-source-tree" class="md-nav__link">
+    Running pipx From Source Tree
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#developing-pipx" class="md-nav__link">
-    Developing pipx
+  <a href="#running-tests" class="md-nav__link">
+    Running Tests
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-pipx-locally" class="md-nav__link">
-    Testing pipx locally
+        
+          <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    Unit Tests
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lint-tests" class="md-nav__link">
+    Lint Tests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -484,8 +524,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    Documentation
+  <a href="#building-documentation" class="md-nav__link">
+    Building Documentation
   </a>
   
     <nav class="md-nav">
@@ -504,8 +544,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#release-new-pipx-version" class="md-nav__link">
-    Release New pipx Version
+  <a href="#releasing-new-pipx-versions" class="md-nav__link">
+    Releasing New pipx Versions
   </a>
   
 </li>
@@ -532,37 +572,23 @@
                   <h1>Contributing</h1>
                 
                 <p>Thanks for your interest in contributing to pipx!</p>
-<h2 id="dependencies">Dependencies</h2>
+<h2 id="running-pipx-from-source-tree">Running pipx From Source Tree</h2>
+<p>To run the pipx executable from your source tree during development, run pipx from the src directory:</p>
+<pre><code>python src/pipx --version
+</code></pre>
+
+<h2 id="running-tests">Running Tests</h2>
+<h3 id="setup">Setup</h3>
 <p>pipx uses an automation tool called <a href="https://pypi.org/project/nox/">nox</a> for development, continuous integration testing, and various tasks.</p>
 <p><code>nox</code> defines tasks or "sessions" in <code>noxfile.py</code> which can be run with <code>nox -s SESSION_NAME</code>. Session names can be listed with <code>nox -l</code>.</p>
 <p>Install nox for pipx development:</p>
-<pre><code>pip install --user git+https://github.com/cs01/nox.git@5ea70723e9e6 nox
+<pre><code>python -m pip install --user git+https://github.com/cs01/nox.git@5ea70723e9e6 nox
 </code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A specific version of nox must be used for pipx development until <a href="https://github.com/theacodes/nox/issues/233">nox issue 233</a> is resolved.</p>
 </div>
-<h2 id="developing-pipx">Developing pipx</h2>
-<p>Clone pipx, then enter the root of the pipx repository. Run this command to see which commands you can run with nox.</p>
-<pre><code>nox -l
-</code></pre>
-
-<p>You should see some options that look like this</p>
-<pre><code>- develop-3.6
-- develop-3.7
-- develop-3.8
-</code></pre>
-
-<p>Choose the Python version you want to develop in and run the following commands, modifying with your version as necessary.</p>
-<pre><code>nox -s develop-3.8
-source .nox/develop-3.8/bin/activate
-</code></pre>
-
-<p>A virtual environment with required dependencies is now sandboxed and activated!</p>
-<p>Go ahead and make your changes now. You can confirm they still work by running unit tests (see the next section).</p>
-<p>To leave the environment, type <code>deactivate</code>.</p>
-<h2 id="testing-pipx-locally">Testing pipx locally</h2>
 <p>Tests are defined as <code>nox</code> sessions. You can see all nox sessions with</p>
 <pre><code>nox -l
 </code></pre>
@@ -586,7 +612,8 @@ Sessions defined in /home/csmith/git/pipx/noxfile.py:
 - publish_docs
 </code></pre>
 
-<p>So to run unit tests in Python3.7, you can run</p>
+<h3 id="unit-tests">Unit Tests</h3>
+<p>To run unit tests in Python3.7, you can run</p>
 <pre><code>nox -s tests-3.7
 </code></pre>
 
@@ -598,14 +625,13 @@ Sessions defined in /home/csmith/git/pipx/noxfile.py:
 <p><code>nox -s tests-3.8 -- -k test_uninstall</code></p>
 <p>Coverage errors can usually be ignored when only running a subset of tests.</p>
 </div>
-<p>To run lint checks, run</p>
+<h3 id="lint-tests">Lint Tests</h3>
 <pre><code>nox -s lint
 </code></pre>
 
-<p>and so on.</p>
 <h2 id="testing-pipx-on-continuous-integration-builds">Testing pipx on Continuous Integration builds</h2>
 <p>When you push a new git branch, tests will automatically be run against your code as defined in <code>.travis</code>.</p>
-<h2 id="documentation">Documentation</h2>
+<h2 id="building-documentation">Building Documentation</h2>
 <p><code>pipx</code> autogenerates API documentation, and also uses templates.</p>
 <p>When updating pipx docs, make sure you are either modifying a file in the <code>templates</code> directory, or the <code>docs</code> directory. If in the <code>docs</code> directory, make sure the file was not autogenerated from the <code>templates</code> directory. Autogenerated files have a note at the top of the file.</p>
 <p>You can generate the documentation with</p>
@@ -621,16 +647,18 @@ Sessions defined in /home/csmith/git/pipx/noxfile.py:
 <pre><code>nox -s publish_docs
 </code></pre>
 
-<h2 id="release-new-pipx-version">Release New <code>pipx</code> Version</h2>
+<h2 id="releasing-new-pipx-versions">Releasing New <code>pipx</code> Versions</h2>
 <p>To create a new release</p>
 <ul>
+<li>update pipx's version in <code>main.py</code> and regenerate documentation</li>
 <li>make sure the changelog is updated</li>
-<li>update the version of pipx defined in <code>setup.py</code></li>
 </ul>
 <p>Finally, run</p>
 <pre><code class="bash">nox -s publish
 nox -s publish_docs
 </code></pre>
+
+<p>and create a new release in GitHub.</p>
                 
                   
                 
