@@ -452,10 +452,10 @@
                 <h2 id="how-it-works">How it Works</h2>
 <p>When installing a package and its binaries (<code>pipx install package</code>) pipx will</p>
 <ul>
-<li>create directory ~/.local/pipx/venvs/PACKAGE</li>
+<li>create directory <code>~/.local/pipx/venvs/PACKAGE</code></li>
 <li>create or re-use a shared virtual environment that contains shared packaging libraries <code>pip</code>, <code>setuptools</code> and <code>wheel</code> in <code>~/.local/pipx/shared/</code></li>
 <li>ensure all packaging libraries are updated to their latest versions</li>
-<li>create a Virtual Environment in ~/.local/pipx/venvs/PACKAGE that uses the shared pip mentioned above but otherwise is isolated (pipx uses a <a href="https://docs.python.org/3/library/site.html">.pth file</a> to do this)</li>
+<li>create a Virtual Environment in <code>~/.local/pipx/venvs/PACKAGE</code> that uses the shared pip mentioned above but otherwise is isolated (pipx uses a <a href="https://docs.python.org/3/library/site.html">.pth file</a> to do this)</li>
 <li>install the desired package in the Virtual Environment</li>
 <li>expose binaries at <code>~/.local/bin</code> that point to new binaries in <code>~/.local/pipx/venvs/PACKAGE/bin</code> (such as <code>~/.local/bin/black</code> -&gt; <code>~/.local/pipx/venvs/black/bin/black</code>)</li>
 <li>As long as <code>~/.local/bin/</code> is on your PATH, you can now invoke the new binaries globally</li>
