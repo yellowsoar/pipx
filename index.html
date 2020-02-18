@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#pipx-install-and-run-python-applications-in-isolated-environments" tabindex="1" class="md-skip">
+      <a href="#pipx-install-and-run-python-applications-in-isolated-environments" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -113,7 +113,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="." title="pipx" class="md-header-nav__button md-logo">
+        <a href="." title="pipx" aria-label="pipx" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -144,7 +144,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -283,6 +283,26 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#where-does-pipx-install-apps-from" class="md-nav__link">
+    Where Does pipx Install Apps From?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#walkthrough-installing-a-package-and-its-applications-with-pipx" class="md-nav__link">
     Walkthrough: Installing a Package and its Applications With pipx
   </a>
@@ -290,8 +310,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#installing-from-source-control" class="md-nav__link">
+    Installing from Source Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#walkthrough-running-an-application-in-a-temporary-sandboxed-environment" class="md-nav__link">
     Walkthrough: Running an Application in a Temporary, Sandboxed Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-from-source-control" class="md-nav__link">
+    Running from Source Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-from-url" class="md-nav__link">
+    Running from URL
   </a>
   
 </li>
@@ -484,6 +525,26 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#where-does-pipx-install-apps-from" class="md-nav__link">
+    Where Does pipx Install Apps From?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#walkthrough-installing-a-package-and-its-applications-with-pipx" class="md-nav__link">
     Walkthrough: Installing a Package and its Applications With pipx
   </a>
@@ -491,8 +552,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#installing-from-source-control" class="md-nav__link">
+    Installing from Source Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#walkthrough-running-an-application-in-a-temporary-sandboxed-environment" class="md-nav__link">
     Walkthrough: Running an Application in a Temporary, Sandboxed Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-from-source-control" class="md-nav__link">
+    Running from Source Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-from-url" class="md-nav__link">
+    Running from URL
   </a>
   
 </li>
@@ -549,13 +631,7 @@
                   <a href="https://github.com/pipxproject/pipx/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <!---
-Do not edit this file. This file was rendered from the
-templates/ directory.
-See Contributing for how to update this file.
---->
-
-<p align="center">
+                <p align="center">
 <a href="https://pipxproject.github.io/pipx/">
 <img align="center" src="https://github.com/pipxproject/pipx/raw/master/logo.png"/>
 </a>
@@ -570,10 +646,7 @@ See Contributing for how to update this file.
 
 <p align="center">
 <a href="https://travis-ci.org/pipxproject/pipx"><img src="https://travis-ci.org/pipxproject/pipx.svg?branch=master" /></a>
-
-<a href="https://pypi.python.org/pypi/pipx/">
-<img src="https://img.shields.io/badge/pypi-0.15.1.3-blue.svg" /></a>
-<a href="https://github.com/ambv/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+<a href="https://badge.fury.io/py/pipx"><img src="https://badge.fury.io/py/pipx.svg" alt="PyPI version" height="18"></a>
 </p>
 
 <p><strong>Documentation</strong>: https://pipxproject.github.io/pipx/</p>
@@ -591,22 +664,27 @@ pipx ensurepath
 python3 -m pipx ensurepath
 </code></pre>
 
-<p>Upgrade pipx with <code>python3 -m pip install -U pipx</code>.</p>
+<p>Upgrade pipx with <code>python3 -m pip install --user -U pipx</code>.</p>
 <p>Shell completions are available by following the instructions printed with this command:</p>
 <pre><code>pipx completions
 </code></pre>
 
 <p>For more details, see the <a href="https://pipxproject.github.io/pipx/installation/">installation instructions</a>.</p>
 <h2 id="overview-what-is-pipx">Overview: What is <code>pipx</code>?</h2>
-<p>pipx is a tool to help you install and run end-user applications written in Python. pipx <strong>is not</strong> a tool for development or publishing of your code -- it's only for consuming already published packages.</p>
-<p>If you are familiar macOS's <code>brew</code>, it's kind of like that but for Python applications. If you are familiar with JavaScript's <a href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">npx</a>, it's kind of like that but also allows you to install packages. If you are familiar with <code>pip</code>, it's kind of like that but is only focused on installing packages that have entry points.</p>
-<p>pipx does not ship with pip, but installing it is often an important part of bootstrapping your system.</p>
-<p>Python and PyPI allow developers to distribute code with "console script entry points". These scripts let users call into Python code from the command line, effectively acting like standalone applications. <code>pipx</code> is a tool to install and run any of these thousands of Python applications available on PyPI in a safe, convenient, and reliable way. <strong>In a way, it turns Python Package Index (PyPI) into a big app store for Python applications.</strong> Not all Python packages have entry points, but many do.</p>
-<p><code>pipx</code> enables you to:</p>
+<p>pipx is a tool to help you install and run end-user applications written in Python. It's roughly similar to macOS's <code>brew</code>, JavaScript's <a href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">npx</a>, and Linux's <code>apt</code>.</p>
+<p>It's closely related to <code>pip</code>. In fact, it uses <code>pip</code>, but is focused installing and managing Python packages that can be run from the command line directly as applications. <code>pip</code> is a general-purpose package installer for both libraries and apps with no environment isolation. For library installation you should use pip (or a similar tool), not <code>pipx</code>. But for application installation, consider <code>pipx</code> since it also adds isolation: <code>pipx</code> creates an isolated environment for each application and its associated packages.</p>
+<p><code>pipx</code> does not ship with <code>pip</code>, but installing it is often an important part of bootstrapping your system.</p>
+<h3 id="where-does-pipx-install-apps-from">Where Does <code>pipx</code> Install Apps From?</h3>
+<p>By default, <code>pipx</code> uses the same package index as <code>pip</code>, <a href="https://pypi.org/">PyPI</a>. <code>pipx</code> can also install from all other sources pip can, such as a local directory, wheel, git url, etc.</p>
+<p>Python and PyPI allow developers to distribute code with "console script entry points". These entry points let users call into Python code from the command line, effectively acting like standalone applications.</p>
+<p><code>pipx</code> is a tool to install and run any of these thousands of application-containing packages in a safe, convenient, and reliable way. <strong>In a way, it turns Python Package Index (PyPI) into a big app store for Python applications.</strong> Not all Python packages have entry points, but many do.</p>
+<p>If you would like to make your package compatible with pipx, all you need to do is add a <a href="https://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point"><code>console scripts</code></a> entry point. If you're a poetry user, use <a href="https://python-poetry.org/docs/pyproject/#scripts">these instructions</a>.</p>
+<h2 id="features">Features</h2>
+<p><code>pipx</code> enables you to</p>
 <ul>
-<li>Safely install packages to isolated environments, while globally exposing their CLI entry points so you can run them from anywhere (see the <code>install</code> command). This guarantees no dependency conflicts and clean uninstalls!</li>
+<li>Expose CLI entrypoints of packages ("apps") installed to isolated environments with the <code>install</code> command. This guarantees no dependency conflicts and clean uninstalls!</li>
 <li>Easily list, upgrade, and uninstall packages that were installed with pipx</li>
-<li>Run the latest version of a Python application in a temporary environment (see the <code>run</code> command)</li>
+<li>Run the latest version of a Python application in a temporary environment with the <code>run</code> command</li>
 </ul>
 <p>Best of all, pipx runs with regular user permissions, never calling <code>sudo pip install</code> (you aren't doing that, are you? 😄).</p>
 <h3 id="walkthrough-installing-a-package-and-its-applications-with-pipx">Walkthrough: Installing a Package and its Applications With <code>pipx</code></h3>
@@ -645,9 +723,19 @@ apps are exposed on your $PATH at /home/user/.local/bin
 
 </code></pre>
 
+<h3 id="installing-from-source-control">Installing from Source Control</h3>
+<p>You can also install from a git repository. Here, <code>black</code> is used as an example.</p>
+<pre><code>pipx install git+https://github.com/psf/black.git
+pipx install git+https://github.com/psf/black.git@branch  # branch of your choice
+pipx install git+https://github.com/psf/black.git@ce14fa8b497bae2b50ec48b3bd7022573a59cdb1  # git hash
+pipx install https://github.com/psf/black/archive/18.9b0.zip  # install a release
+</code></pre>
+
 <h3 id="walkthrough-running-an-application-in-a-temporary-sandboxed-environment">Walkthrough: Running an Application in a Temporary, Sandboxed Environment</h3>
-<p>I find this handy when I need to run the latest version of an app, but don't necessarily need it installed on my computer.</p>
-<p>You may want to do this when you are initializing a new project and want to set up the right directory structure, when you want to view the help text of an application, or if you simply want to run an app in a one-off case and and leave your system untouched afterwards.</p>
+<p>This is an alternative to <code>pipx install</code>.</p>
+<p><code>pipx run</code> downloads and runs the above mentioned Python "apps" in a one-time, temporary environment, leaving your system untouched afterwards.</p>
+<p>This can be handy when you need to run the latest version of an app, but don't necessarily want it installed on your computer.</p>
+<p>You may want to do this when you are initializing a new project and want to set up the right directory structure, when you want to view the help text of an application, or if you simply want to run an app in a one-off case and leave your system untouched afterwards.</p>
 <p>For example, the blog post <a href="https://sourcery.ai/blog/python-best-practices/">How to set up a perfect Python project</a> uses <code>pipx run</code> to kickstart a new project with <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>, a tool that creates projects from project templates.</p>
 <p>A nice side benefit is that you don't have to remember to upgrade the app since <code>pipx run</code> will automatically run a recent version for you.</p>
 <p>Okay, let's see what this looks like in practice!</p>
@@ -685,6 +773,23 @@ apps are exposed on your $PATH at /home/user/.local/bin
 </code></pre>
 
 <p>Re-running the same app is quick because pipx caches Virtual Environments on a per-app basis. The caches only last a few days, and when they expire, pipx will again use the latest version of the package. This way you can be sure you're always running a new version of the package without having to manually upgrade.</p>
+<p>If the app name does not match that package name, you can use the <code>--spec</code> arguemnt:</p>
+<pre><code>pipx run --spec $PACKAGE $APP
+</code></pre>
+
+<p>You can also use the <code>--spec</code> argument to run a specific version, or use any other <code>pip</code>-specifier:</p>
+<pre><code>pipx run --spec PACKAGE==1.0.0 $APP
+</code></pre>
+
+<h3 id="running-from-source-control">Running from Source Control</h3>
+<p>You can also run from a git repository. Here, <code>black</code> is used as an example.</p>
+<pre><code>pipx run --spec git+https://github.com/psf/black.git black
+pipx run --spec git+https://github.com/psf/black.git@branch black  # branch of your choice
+pipx run --spec git+https://github.com/psf/black.git@ce14fa8b497bae2b50ec48b3bd7022573a59cdb1 black  # git hash
+pipx run --spec https://github.com/psf/black/archive/18.9b0.zip black # install a release
+</code></pre>
+
+<h3 id="running-from-url">Running from URL</h3>
 <p>You can run .py files directly, too.</p>
 <pre><code>pipx run https://gist.githubusercontent.com/cs01/fa721a17a326e551ede048c5088f9e0f/raw/6bdfbb6e9c1132b1c38fdd2f195d4a24c540c324/pipx-demo.py
 pipx is working!
@@ -705,7 +810,7 @@ pipx is working!
 <div>
 "My setup pieces together pyenv, poetry, and pipx. [...] For the things I need, it’s perfect."
 <div style="text-align: right; margin-right: 10%; font-style:italic;">
-—<a href="https://twitter.com/mkennedy">Jacob Moss</a>, co-creator of Django in blog post <a href="https://jacobian.org/2019/nov/11/python-environment-2020/">My Python Development Environment, 2020 Edition</a>
+—<a href="https://twitter.com/jacobian">Jacob Kaplan-Moss</a>, co-creator of Django in blog post <a href="https://jacobian.org/2019/nov/11/python-environment-2020/">My Python Development Environment, 2020 Edition</a>
 </div>
 </div>
 
@@ -776,9 +881,9 @@ pipx is working!
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -788,7 +893,7 @@ pipx is working!
       
     </div>
     
-      <script src="assets/javascripts/application.808e90bb.js"></script>
+      <script src="assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
       
