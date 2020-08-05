@@ -13,7 +13,7 @@
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.3">
     
     
       
@@ -21,7 +21,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4c7052ca.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.947af8d5.min.css">
       
       
     
@@ -38,8 +38,7 @@
     
       
         
-<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-90243909-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-90243909-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -49,6 +48,7 @@
   
     <body dir="ltr">
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -321,7 +321,15 @@
                 
                   <h1>Changelog</h1>
                 
-                <p>dev</p>
+                <p>dev
+- Version of each injected package is now listed after name for <code>pipx list --include-injected</code>
+- Change metadata recorded from version-specified install to allow upgrades in future.  Adds pipx dependency on <code>packaging</code> package.
+- [bugfix] Prevent python error in case where package has no pipx metadata and advise user how to fix.
+- [feature] <code>ensurepath</code> now also ensures that pip user binary path containing pipx itself is in user's PATH if pipx was installed using <code>pip install --user</code>.
+- [bugfix] For <code>pipx install</code>, fixed failure to install if user has <code>PIP_USER=1</code> or <code>user=true</code> in pip.conf. (#110)
+- [bugfix] Requiring userpath v1.4.1 or later so ensure Windows bug is fixed for <code>ensurepath</code> (#437)
+- [feature] log pipx version (#423)
+- [feature] <code>--suffix</code> option for <code>install</code> to allow multiple versions of same tool to be installed (#445)</p>
 <p>0.15.4.0
 - [feature] <code>list</code> now has a new option <code>--include-injected</code> to show the injected packages in the main apps
 - [bugfix] Fixed bug that can cause crash when installing an app</p>
@@ -342,6 +350,7 @@
 <li>[bugfix] Hide cursor while pipx runs</li>
 <li>[feature] Add environment variable <code>USE_EMOJI</code> to allow enabling/disabling emojies (#376)</li>
 <li>[refactor] Moved all commands to separate files within the commands module (#255).</li>
+<li>[bugfix] Ignore system shared libraries when installing shared libraries pip, wheel, and setuptools. This also fixes an incompatibility with Debian/Ubuntu's version of pip (#386).</li>
 </ul>
 <p>0.15.1.3</p>
 <ul>
@@ -576,15 +585,15 @@
       
     </div>
     
-      <script src="../assets/javascripts/vendor.22b62ea4.min.js"></script>
-      <script src="../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.c3dc8c49.min.js"></script>
+      <script src="../assets/javascripts/bundle.f9edbbd5.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.f6ebf1dc.min.js"
+            worker: "../assets/javascripts/worker/search.8e2cddea.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

@@ -13,7 +13,7 @@
       
       
       <link rel="shortcut icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.3">
     
     
       
@@ -21,7 +21,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.4c7052ca.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.947af8d5.min.css">
       
       
     
@@ -38,8 +38,7 @@
     
       
         
-<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-90243909-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-90243909-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -49,6 +48,7 @@
   
     <body dir="ltr">
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -611,8 +611,8 @@
 </p>
 
 <p align="center">
-<a href="https://travis-ci.org/pipxproject/pipx"><img src="https://travis-ci.org/pipxproject/pipx.svg?branch=master" /></a>
-<a href="https://badge.fury.io/py/pipx"><img src="https://badge.fury.io/py/pipx.svg" alt="PyPI version" height="18"></a>
+<a href="https://github.com/pipxproject/pipx/actions?query=workflow%3ATest"><img src="https://github.com/pipxproject/pipx/workflows/Test/badge.svg?branch=master" alt="Test CI" ></a>
+<a href="https://badge.fury.io/py/pipx"><img src="https://badge.fury.io/py/pipx.svg" alt="PyPI version"></a>
 </p>
 
 <p><strong>Documentation</strong>: https://pipxproject.github.io/pipx/</p>
@@ -741,12 +741,12 @@ pipx install https://github.com/psf/black/archive/18.9b0.zip  # install a releas
 </code></pre>
 
 <p>Re-running the same app is quick because pipx caches Virtual Environments on a per-app basis. The caches only last a few days, and when they expire, pipx will again use the latest version of the package. This way you can be sure you're always running a new version of the package without having to manually upgrade.</p>
-<p>If the app name does not match that package name, you can use the <code>--spec</code> arguemnt:</p>
-<pre><code>pipx run --spec $PACKAGE $APP
+<p>If the app name does not match that package name, you can use the <code>--spec</code> argument:</p>
+<pre><code>pipx run --spec PACKAGE APP
 </code></pre>
 
 <p>You can also use the <code>--spec</code> argument to run a specific version, or use any other <code>pip</code>-specifier:</p>
-<pre><code>pipx run --spec PACKAGE==1.0.0 $APP
+<pre><code>pipx run --spec PACKAGE==1.0.0 APP
 </code></pre>
 
 <h3 id="running-from-source-control">Running from Source Control</h3>
@@ -857,15 +857,15 @@ pipx is working!
       
     </div>
     
-      <script src="assets/javascripts/vendor.22b62ea4.min.js"></script>
-      <script src="assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="assets/javascripts/vendor.c3dc8c49.min.js"></script>
+      <script src="assets/javascripts/bundle.f9edbbd5.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: ".",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.f6ebf1dc.min.js"
+            worker: "assets/javascripts/worker/search.8e2cddea.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
